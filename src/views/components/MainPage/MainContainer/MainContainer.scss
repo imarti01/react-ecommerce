@@ -1,0 +1,14 @@
+@import "../../../../scss/mixins.scss";
+
+.main-container {
+
+    &__button {
+        @include buttonBuy(red);
+
+        width: 50px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
