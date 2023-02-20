@@ -53,7 +53,7 @@ export const ChocolatesInfo = [
     name: "HAZELNULT",
     desc: "Praliné made of hazelnuts",
     price: 1.05,
-    src: "https://res.cloudinary.com/duokspzx0/image/upload/v1676619843/chocolates/chocolate10_prnwv3.png",
+    src: "https://res.cloudinary.com/duokspzx0/image/upload/v1676906460/chocolates/chocolate17_ba6v1k.png",
   },
   {
     id: 9,
@@ -84,3 +84,5 @@ export const ChocolatesInfo = [
     src: "https://res.cloudinary.com/duokspzx0/image/upload/v1676619842/chocolates/chocolate14_aay6fx.png",
   },
 ];
+
+export const SizeBoxes = [6, 10, 16, 24, 32, 48];

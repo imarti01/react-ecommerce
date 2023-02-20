@@ -1,6 +1,15 @@
 import "./BoxesSection.scss";
+import { SizeBoxes } from "../../../../db/db";
 
 export const BoxesSection = () => {
+  const chooseSizeBox = (e) => {
+    const newBox = {
+      pcs: parseInt(e.target.innerText, 10),
+      chocolates: [],
+    };
+    console.log(newBox);
+  };
+
   return (
     <div className="boxes-section">
       <img
@@ -12,12 +21,13 @@ export const BoxesSection = () => {
         Start by choosing the size of your box
       </p>
       <div className="boxes-section__container-sizes">
-        <p>6pcs</p>
-        <p>10pcs</p>
-        <p>16pcs</p>
-        <p>24pcs</p>
-        <p>32pcs</p>
-        <p>48pcs</p>
+        {SizeBoxes.map((pcs) => {
+          return (
+            <p key={pcs + "pcs"} onClick={chooseSizeBox}>
+              {pcs}pcs
+            </p>
+          );
+        })}
       </div>
       <p className="boxes-section__text">
         Now, keep picking out the chocolates that will hold your box
