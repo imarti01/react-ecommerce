@@ -1,0 +1,45 @@
+@import "../../../../scss/variables.scss";
+
+.chocolate-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20rem;
+    width: 12rem;
+    background-color: $light-color;
+    margin: 1.5rem 0rem;
+    color: $dark-color;
+    padding: 1rem;
+    box-shadow: 1px 1px 2px #bd9f7b;
+
+    &__img {
+        height: 8rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__name {
+        font-size: 0.9rem;
+    }
+
+    &__desc {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: 1rem;
+        background-image: url("../../../../../assets/imgs/paper.jpg");
+        // background-color: $light-color;
+        // color: $light-color;
+        border: none;
+        box-shadow: 2px 2px 4px $dark-color;
+        padding: 0.3rem 1.2rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        width: 90%;
+    }
+}

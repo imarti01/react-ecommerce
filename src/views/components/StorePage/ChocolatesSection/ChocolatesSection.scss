@@ -1,0 +1,12 @@
+@import "../../../../scss/variables.scss";
+
+.chocolates-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $dark-color;
+    padding: 1rem;
+    width: 100%;
+}

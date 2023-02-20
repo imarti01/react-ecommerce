@@ -1,0 +1,23 @@
+@import "../../../../scss/variables.scss";
+
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $dark-color;
+    width: 100%;
+    height: 4.5rem;
+    color: $light-color;
+    z-index: 1;
+    
+    p {
+        margin: 0rem 1rem;
+    }
+
+    &__gloria{
+        font-size: 2.5rem;
+    }
+}

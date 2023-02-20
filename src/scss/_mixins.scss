@@ -1,4 +1,39 @@
 @mixin buttonBuy ($color) {
     background-color: $color;
-   
+    font-size: 2rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 2rem;
+    border: 1px double $light-color;  
+    cursor: pointer;  
+    
+    a {
+        text-decoration: none;
+        &:-webkit-any-link {
+            color: $dark-color;
+        }
+    }
+    
+    &:hover {
+        
+        border: 1px solid $dark-color;  
+       
+
+    }
+
+}
+
+@mixin scrollbar ($colorBar, $colorBg) {
+    ::-webkit-scrollbar {
+        width: 0.5rem; 
+      }
+      
+    ::-webkit-scrollbar-track {
+       background: $colorBg;
+     }
+      
+     ::-webkit-scrollbar-thumb {
+       background: $colorBar;
+       border-radius: 1rem;
+     }
+      
 }
