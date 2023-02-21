@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
 
 export const BoxesSection = () => {
-  const { box, setBox } = useContext(CartContext);
+  const { currentBox, setCurrentBox } = useContext(CartContext);
 
   const chooseBoxSize = (pcs) => {
-    setBox({ ...box, pcs });
+    setCurrentBox({ ...currentBox, pcs });
   };
 
   return (
