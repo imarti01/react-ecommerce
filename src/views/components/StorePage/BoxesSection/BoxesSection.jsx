@@ -1,13 +1,13 @@
 import "./BoxesSection.scss";
 import { SizeBoxes } from "../../../../db/db";
+import { useContext } from "react";
+import { CartContext } from "../../../../context/CartContext";
 
 export const BoxesSection = () => {
-  const chooseSizeBox = (e) => {
-    const newBox = {
-      pcs: parseInt(e.target.innerText, 10),
-      chocolates: [],
-    };
-    console.log(newBox);
+  const { box, setBox } = useContext(CartContext);
+
+  const chooseBoxSize = (pcs) => {
+    setBox({ ...box, pcs });
   };
 
   return (
@@ -23,7 +23,7 @@ export const BoxesSection = () => {
       <div className="boxes-section__container-sizes">
         {SizeBoxes.map((pcs) => {
           return (
-            <p key={pcs + "pcs"} onClick={chooseSizeBox}>
+            <p key={pcs + "pcs"} onClick={() => chooseBoxSize(pcs)}>
               {pcs}pcs
             </p>
           );
