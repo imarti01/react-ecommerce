@@ -1,12 +1,16 @@
-export const BoxCard = ({ pcs, chocolates }) => {
+export const BoxCard = ({ pcs, chocolates, key }) => {
   return (
     <div>
-      <h2>Box {pcs} pcs</h2>
-      <ul>
-        {chocolates.map((chocolate) => {
-          return <li>{chocolate}</li>;
-        })}
-      </ul>
+      <h3>BOX {pcs} PCS</h3>
+      {chocolates.map((chocolate) => {
+        return (
+          <div key={key + "_" + chocolate.name}>
+            <p>{chocolate.units}</p>
+            <p>{chocolate.name}</p>
+            <p>{chocolate.price}/u</p>
+          </div>
+        );
+      })}
     </div>
   );
 };

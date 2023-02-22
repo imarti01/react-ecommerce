@@ -8,9 +8,19 @@ export const CartProvider = ({ children }) => {
     pcs: 0,
     chocolates: [],
   });
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <CartContext.Provider value={{ cart, setCart, currentBox, setCurrentBox }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        setCart,
+        currentBox,
+        setCurrentBox,
+        isCartOpen,
+        setIsCartOpen,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

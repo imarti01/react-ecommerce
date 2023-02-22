@@ -3,7 +3,8 @@ import { CartContext } from "../../../../context/CartContext";
 import "./ChocolateCard.scss";
 
 export const ChocolateCard = ({ name, desc, src, price }) => {
-  const { currentBox, setCurrentBox, cart, setCart } = useContext(CartContext);
+  const { currentBox, setCurrentBox, cart, setCart, setIsCartOpen } =
+    useContext(CartContext);
   const { pcs, chocolates } = currentBox;
 
   const addChocolate = (name, price) => {
@@ -24,6 +25,11 @@ export const ChocolateCard = ({ name, desc, src, price }) => {
         chocolates: newArr,
       });
     }
+
+    setIsCartOpen(true);
+    setTimeout(() => {
+      setIsCartOpen(false);
+    }, "2000");
   };
 
   useEffect(() => {

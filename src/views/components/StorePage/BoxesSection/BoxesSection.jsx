@@ -4,10 +4,14 @@ import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
 
 export const BoxesSection = () => {
-  const { currentBox, setCurrentBox } = useContext(CartContext);
+  const { currentBox, setCurrentBox, setIsCartOpen } = useContext(CartContext);
 
   const chooseBoxSize = (pcs) => {
     setCurrentBox({ ...currentBox, pcs });
+    setIsCartOpen(true);
+    setTimeout(() => {
+      setIsCartOpen(false);
+    }, "2000");
   };
 
   return (
