@@ -8,7 +8,7 @@ export function DOMRoutes() {
       <Routes>
         {routes.map((route, index) => (
           <Route
-            key={index}
+            key={"route" + index}
             path={route.path}
             exact={route.exact}
             element={<route.component routes={route.routes} />}

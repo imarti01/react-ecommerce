@@ -1,13 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../../../context/CartContext";
+import { useEffect, useState } from "react";
+import useCartContext from "../../../../hooks/useCartContext";
+
 import "./NavBar.scss";
 
 export const NavBar = () => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCartContext();
   const [totalBoxes, setTotalBoxes] = useState(0);
 
   useEffect(() => {
-    if (cart) setTotalBoxes(cart.length);
+    cart && setTotalBoxes(cart.length);
   }, [cart]);
 
   return (

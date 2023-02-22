@@ -1,1 +1,28 @@
 @import "../../../../scss/variables.scss";
+
+.cart-section {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+ 
+    
+    &__background {
+        width: 100%;
+        height: 100%;
+        background-color: $dark-color;
+        opacity: 0.92;
+    }
+
+    &__cart {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 41%;
+        height: 100%;
+        background-color: $light-color;
+        z-index: 2;
+    }
+}

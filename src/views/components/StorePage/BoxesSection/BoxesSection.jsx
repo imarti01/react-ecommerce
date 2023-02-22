@@ -1,10 +1,9 @@
 import "./BoxesSection.scss";
 import { SizeBoxes } from "../../../../db/db";
-import { useContext } from "react";
-import { CartContext } from "../../../../context/CartContext";
+import useCartContext from "../../../../hooks/useCartContext";
 
 export const BoxesSection = () => {
-  const { currentBox, setCurrentBox, setIsCartOpen } = useContext(CartContext);
+  const { currentBox, setCurrentBox, setIsCartOpen } = useCartContext();
 
   const chooseBoxSize = (pcs) => {
     setCurrentBox({ ...currentBox, pcs });

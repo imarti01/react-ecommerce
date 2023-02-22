@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import useCartContext from "../../../hooks/useCartContext";
 import {
   NavBar,
   BoxesSection,
@@ -10,12 +9,12 @@ import {
 import "./StorePage.scss";
 
 export const StorePage = () => {
-  const { isCartOpen } = useContext(CartContext);
+  const { isCartOpen } = useCartContext();
 
   return (
     <>
       <NavBar />
-      {isCartOpen ? <CartSection /> : null}
+      {isCartOpen && <CartSection />}
       <DescriptionSection />
       <BoxesSection />
       <ChocolatesSection />

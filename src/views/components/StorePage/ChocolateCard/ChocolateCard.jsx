@@ -1,10 +1,10 @@
-import { useContext, useEffect } from "react";
-import { CartContext } from "../../../../context/CartContext";
+import { useEffect } from "react";
+import useCartContext from "../../../../hooks/useCartContext";
 import "./ChocolateCard.scss";
 
 export const ChocolateCard = ({ name, desc, src, price }) => {
   const { currentBox, setCurrentBox, cart, setCart, setIsCartOpen } =
-    useContext(CartContext);
+    useCartContext();
   const { pcs, chocolates } = currentBox;
 
   const addChocolate = (name, price) => {
