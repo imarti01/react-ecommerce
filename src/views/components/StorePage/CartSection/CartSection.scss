@@ -8,12 +8,11 @@
     height: 100%;
     z-index: 1;
  
-    
     &__background {
         width: 100%;
         height: 100%;
         background-color: $dark-color;
-        opacity: 0.92;
+        opacity: 0.70;
     }
 
     &__cart {
@@ -24,5 +23,24 @@
         height: 100%;
         background-color: $light-color;
         z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        &--empty {
+            width: 41vw;
+            height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $dark-color;
+        }
+
+        &--btn {
+            width: 2rem;
+            margin: 0.3rem 1rem;
+            cursor: pointer;
+        }
     }
 }

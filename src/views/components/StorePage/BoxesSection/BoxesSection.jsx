@@ -8,9 +8,6 @@ export const BoxesSection = () => {
   const chooseBoxSize = (pcs) => {
     setCurrentBox({ ...currentBox, pcs });
     setIsCartOpen(true);
-    setTimeout(() => {
-      setIsCartOpen(false);
-    }, "2000");
   };
 
   return (

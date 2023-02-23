@@ -8,28 +8,29 @@ export const ChocolateCard = ({ name, desc, src, price }) => {
   const { pcs, chocolates } = currentBox;
 
   const addChocolate = (name, price) => {
-    const idxChocolate = chocolates.findIndex((chocolate) => {
-      return chocolate.name === name;
-    });
-
-    if (idxChocolate < 0) {
-      setCurrentBox({
-        ...currentBox,
-        chocolates: [...chocolates, { units: 1, name, price }],
+    if (currentBox.pcs !== 0) {
+      const idxChocolate = chocolates.findIndex((chocolate) => {
+        return chocolate.name === name;
       });
+
+      if (idxChocolate < 0) {
+        setCurrentBox({
+          ...currentBox,
+          chocolates: [...chocolates, { units: 1, name, price }],
+        });
+      } else {
+        const newArr = [...chocolates];
+        newArr[idxChocolate].units += 1;
+        setCurrentBox({
+          ...currentBox,
+          chocolates: newArr,
+        });
+      }
+
+      setIsCartOpen(true);
     } else {
-      const newArr = [...chocolates];
-      newArr[idxChocolate].units += 1;
-      setCurrentBox({
-        ...currentBox,
-        chocolates: newArr,
-      });
+      //dir que seleccioni primer la caixa
     }
-
-    setIsCartOpen(true);
-    setTimeout(() => {
-      setIsCartOpen(false);
-    }, "2000");
   };
 
   useEffect(() => {
