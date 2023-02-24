@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import useCartContext from "../../../hooks/useCartContext";
 import {
   NavBar,
@@ -11,13 +12,18 @@ import "./StorePage.scss";
 export const StorePage = () => {
   const { isCartOpen } = useCartContext();
 
+  const boxSectionRef = useRef();
+  const scrollBoxSection = () => {
+    boxSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <NavBar />
       {isCartOpen && <CartSection />}
       <DescriptionSection />
-      <BoxesSection />
-      <ChocolatesSection />
+      <BoxesSection refProps={boxSectionRef} />
+      <ChocolatesSection scrollBoxSection={scrollBoxSection} />
     </>
   );
 };

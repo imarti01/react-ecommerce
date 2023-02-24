@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useCartContext from "../../../../hooks/useCartContext";
 import "./ChocolateCard.scss";
 
-export const ChocolateCard = ({ name, desc, src, price }) => {
+export const ChocolateCard = ({ name, desc, src, price, scrollBoxSection }) => {
   const { currentBox, setCurrentBox, cart, setCart, setIsCartOpen } =
     useCartContext();
   const { pcs, chocolates } = currentBox;
@@ -29,7 +29,7 @@ export const ChocolateCard = ({ name, desc, src, price }) => {
 
       setIsCartOpen(true);
     } else {
-      //dir que seleccioni primer la caixa
+      scrollBoxSection();
     }
   };
 

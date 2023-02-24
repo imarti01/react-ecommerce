@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./BoxCard.scss";
+import "./CurrentBoxDetail.scss";
 
-export const BoxCard = ({ pcs, chocolates, idx }) => {
+export const CurrentBoxDetail = ({ pcs, chocolates }) => {
   const arrSubTotals = chocolates.map(
     (chocolate) => chocolate.units * chocolate.price
   );
@@ -11,7 +11,7 @@ export const BoxCard = ({ pcs, chocolates, idx }) => {
       <h3 className="box-card__title">BOX {pcs} PCS</h3>
       {chocolates.map((chocolate) => {
         return (
-          <div className="box-card__list" key={idx + "_" + chocolate.name}>
+          <div className="box-card__list" key={chocolate.name}>
             <p className="box-card__list--name">{chocolate.name}</p>
             <p className="box-card__list--units">
               <span>-</span> {chocolate.units} <span>+</span>

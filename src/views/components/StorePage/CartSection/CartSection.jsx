@@ -1,6 +1,6 @@
 import useCartContext from "../../../../hooks/useCartContext";
 import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
-import { BoxCard } from "../BoxCard/BoxCard";
+import { CurrentBoxDetail } from "../CurrentBoxDetail/CurrentBoxDetail";
 
 import "./CartSection.scss";
 
@@ -23,16 +23,15 @@ export const CartSection = () => {
             </div>
           )}
           {currentBox.pcs !== 0 && (
-            <BoxCard
+            <CurrentBoxDetail
               pcs={currentBox.pcs}
               chocolates={currentBox.chocolates}
-              idx={0}
             />
           )}
           {cart.length > 0 &&
             cart.map((box, idx) => {
               return (
-                <BoxCard
+                <CurrentBoxDetail
                   pcs={box.pcs}
                   chocolates={box.chocolates}
                   key={"box" + (idx + 1)}

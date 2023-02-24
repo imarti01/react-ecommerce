@@ -3,7 +3,7 @@ import { ChocolatesInfo } from "../../../../db/db";
 import { ChocolateCard } from "../ChocolateCard/ChocolateCard";
 import "./ChocolatesSection.scss";
 
-export const ChocolatesSection = () => {
+export const ChocolatesSection = ({ scrollBoxSection }) => {
   return (
     <div className="chocolates-section">
       {ChocolatesInfo.map((chocolate) => {
@@ -14,6 +14,7 @@ export const ChocolatesSection = () => {
             desc={chocolate.desc}
             src={chocolate.src}
             price={chocolate.price}
+            scrollBoxSection={scrollBoxSection}
           />
         );
       })}

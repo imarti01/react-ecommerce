@@ -2,7 +2,7 @@ import "./BoxesSection.scss";
 import { SizeBoxes } from "../../../../db/db";
 import useCartContext from "../../../../hooks/useCartContext";
 
-export const BoxesSection = () => {
+export const BoxesSection = ({ refProps }) => {
   const { currentBox, setCurrentBox, setIsCartOpen } = useCartContext();
 
   const chooseBoxSize = (pcs) => {
@@ -11,7 +11,7 @@ export const BoxesSection = () => {
   };
 
   return (
-    <div className="boxes-section">
+    <div className="boxes-section" ref={refProps}>
       <img
         className="boxes-section__img"
         src="https://res.cloudinary.com/duokspzx0/image/upload/v1676890814/boxes/caixa16-removebg-preview_dsawv6.png"
