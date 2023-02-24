@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./CurrentBoxDetail.scss";
 
 export const CurrentBoxDetail = ({ pcs, chocolates }) => {
