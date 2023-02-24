@@ -1,4 +1,5 @@
 import useCartContext from "../../../../hooks/useCartContext";
+import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
 import { BoxCard } from "../BoxCard/BoxCard";
 
 import "./CartSection.scss";
@@ -14,6 +15,7 @@ export const CartSection = () => {
     <div className="cart-section">
       <div className="cart-section__background" onClick={closeCart}></div>
       <div className="cart-section__cart">
+        <TotalBoxesNav className="cart-section__cart--nav" />
         <div>
           {!cart.length && currentBox.pcs === 0 && (
             <div className="cart-section__cart--empty">
@@ -21,7 +23,11 @@ export const CartSection = () => {
             </div>
           )}
           {currentBox.pcs !== 0 && (
-            <BoxCard pcs={currentBox.pcs} chocolates={currentBox.chocolates} />
+            <BoxCard
+              pcs={currentBox.pcs}
+              chocolates={currentBox.chocolates}
+              idx={0}
+            />
           )}
           {cart.length > 0 &&
             cart.map((box, idx) => {
@@ -30,6 +36,7 @@ export const CartSection = () => {
                   pcs={box.pcs}
                   chocolates={box.chocolates}
                   key={"box" + (idx + 1)}
+                  idx={idx + 1}
                 />
               );
             })}

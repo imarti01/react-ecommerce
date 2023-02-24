@@ -9,16 +9,17 @@
     height: 20rem;
     width: 12rem;
     background-color: $light-color;
-    margin: 1.5rem 0rem;
+    margin: 2.5rem 2rem;
     color: $dark-color;
     padding: 1rem;
     box-shadow: 1px 1px 2px #bd9f7b;
     border-radius: 100% 20% 0% 0%;
-
+    
     &__img {
         height: 8rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        filter: drop-shadow(2px 2px 6px #1c1612 );
     }
 
     &__name {
@@ -40,28 +41,21 @@
         position: absolute;
         bottom: 1rem;
         background-size: cover;
-        border: none;
         box-shadow: 2px 2px 7px $dark-color;
         padding: 0.3rem 1.2rem;
         font-size: 0.8rem;
         cursor: pointer;
         width: 91%;
-
         background-image: url("../../../../../assets/imgs/choco6.jpg");
         background-size: cover;
-        // background-position: left;
-        // color: $light-color;
-        // text-shadow: 3px 3px 4px $dark-color;
-        // background-color: $dark-color;
         color: #ddc2a7;
         font-weight: lighter;
         text-shadow: 1px 1px 10px $light-color;
+        border: none;
         border-radius: 0% 50% 0% 50%;
 
         &:hover {
-            // font-size: 0.85rem;
             width: 90%;
-            // background-position: right;
             transition-duration: 0.2s;
         }
 
