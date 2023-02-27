@@ -12,7 +12,8 @@ export const ContainerList = () => {
         <div>
           <h3>You don't have any boxes on your wish list yet.</h3>
           <h3>
-            You can create and add a box by clicking on the add icon below.
+            You can create and add a box to the wish list by clicking on the add
+            icon below.
           </h3>
         </div>
       )}
