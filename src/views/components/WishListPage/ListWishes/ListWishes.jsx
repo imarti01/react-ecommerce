@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import useWishList from "../../../../hooks/useWishList";
 
 export const ListWishes = () => {
@@ -10,10 +11,14 @@ export const ListWishes = () => {
     setWishList(newWishList);
   };
 
+  useEffect(() => {
+    localStorage.setItem("wishes", JSON.stringify(wishList));
+  }, [wishList]);
+
   return (
     <ul>
-      {wishList.map((wish, idx) => (
-        <li key={wish + idx}>
+      {wishList.map((wish) => (
+        <li key={wish.id}>
           <input
             type="checkbox"
             onChange={() => changeDoneState(wish.id)}

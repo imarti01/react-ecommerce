@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { WishListContext } from "./WishListContext";
 
 export const WishListProvider = ({ children }) => {
-  const [wishList, setWishList] = useState([]);
+  const [wishList, setWishList] = useState(
+    JSON.parse(localStorage.getItem("wishes")) || []
+  );
 
   const [currentBox, setCurrentBox] = useState({
     id: "",
@@ -12,11 +14,6 @@ export const WishListProvider = ({ children }) => {
     pcs: "",
     totalBox: 0,
     chocolates: [],
-  });
-
-  useEffect(() => {
-    const wishesStorage = localStorage.getItem("wishes");
-    if (!wishesStorage) console.log(wishesStorage);
   });
 
   return (
