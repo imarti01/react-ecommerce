@@ -1,10 +1,26 @@
+import { useEffect, useState } from "react";
+import useWishList from "../../../../hooks/useWishList";
+
 export const CardChocolateForm = ({
   chocolate,
-  units,
   substractChocolate,
   addChocolate,
 }) => {
   const { src, name, price } = chocolate;
+  const { currentBox } = useWishList();
+  const { pcs, chocolates } = currentBox;
+
+  const [units, setUnits] = useState(0);
+
+  useEffect(() => {
+    const newUnits = chocolates.filter((choc) => choc.name === name);
+    if (newUnits.length > 0) {
+      setUnits(newUnits[0].units);
+    } else {
+      setUnits(0);
+    }
+  }, [currentBox]);
+
   return (
     <div>
       <img src={src} alt={name} />
@@ -18,7 +34,9 @@ export const CardChocolateForm = ({
           -
         </button>
         <h4>{units}</h4>
-        <button onClick={() => addChocolate(chocolate)}>+</button>
+        <button disabled={!pcs} onClick={() => addChocolate(chocolate)}>
+          +
+        </button>
       </div>
     </div>
   );

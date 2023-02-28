@@ -1,13 +1,21 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 import { ChocolatesInfo, SizeBoxes } from "../../../../db/db";
 import useWishList from "../../../../hooks/useWishList";
 import { CardChocolateForm } from "../CardChocolateForm/CardChocolateForm";
 
 export const FormHandleBox = () => {
-  const { currentBox, setCurrentBox } = useWishList();
-  const { pcs, chocolates, totalBox } = currentBox;
+  const navigate = useNavigate();
+  const newId = uuid();
 
-  const [counterChocolates, setCounterChocolates] = useState(0);
+  const { currentBox, setCurrentBox, wishList, setWishList } = useWishList();
+  const { id, pcs, chocolates, totalBox } = currentBox;
+
+  const [counterChocolates, setCounterChocolates] = useState(null);
+  useEffect(() => {
+    if (!id) setCurrentBox({ ...currentBox, id: newId });
+  }, [currentBox]);
 
   const addChocolate = (chocolateToAdd) => {
     const { name, price } = chocolateToAdd;
@@ -44,7 +52,7 @@ export const FormHandleBox = () => {
       return chocolate.name === name;
     });
 
-    const newArr = [...chocolates];
+    let newArr = [...chocolates];
     if (newArr[idxChocolate].units > 1) {
       newArr[idxChocolate].units -= 1;
     } else {
@@ -69,7 +77,19 @@ export const FormHandleBox = () => {
     });
   };
 
-  useEffect(() => {}, [currentBox, counterChocolates]);
+  const addToWishList = () => {
+    setWishList([...wishList, currentBox]);
+    navigate("/");
+    setCurrentBox({
+      id: "",
+      done: false,
+      isEditing: false,
+      name: "",
+      pcs: "",
+      totalBox: 0,
+      chocolates: [],
+    });
+  };
 
   return (
     <div>
@@ -86,7 +106,7 @@ export const FormHandleBox = () => {
         <legend> Choose the size of your box:</legend>
         {SizeBoxes.map((pcs) => {
           return (
-            <label>
+            <label key={pcs + "pcs"}>
               <input type="radio" name="pcs" value={pcs} key={pcs + "pcs"} />
               {pcs + "pcs"}
             </label>
@@ -103,8 +123,10 @@ export const FormHandleBox = () => {
           />
         ))}
       </div>
-      <h3>Total:{totalBox}€</h3>
-      <button disabled={pcs !== counterChocolates}>Save</button>
+      <h3>Total:{totalBox.toFixed(2)}€</h3>
+      <button disabled={pcs != counterChocolates} onClick={addToWishList}>
+        Save
+      </button>
     </div>
   );
 };
