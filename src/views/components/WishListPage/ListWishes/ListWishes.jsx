@@ -1,13 +1,29 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import useWishList from "../../../../hooks/useWishList";
 
 export const ListWishes = () => {
-  const { wishList, setWishList } = useWishList();
+  const navigate = useNavigate();
+  const { wishList, setWishList, setCurrentBox, setCounterChocolates } =
+    useWishList();
 
   const changeDoneState = (id) => {
     const newWishList = wishList.map((wish) =>
       wish.id !== id ? wish : { ...wish, done: !wish.done }
     );
+    setWishList(newWishList);
+  };
+
+  const editWishBox = (id) => {
+    const boxToEdit = wishList.filter((wish) => wish.id === id);
+    setCurrentBox({ ...boxToEdit[0], isEditing: true });
+    navigate("/handleBoxWishList");
+    const numOfPcs = Number(boxToEdit[0].pcs);
+    setCounterChocolates(numOfPcs);
+  };
+
+  const removeWishBox = (id) => {
+    const newWishList = wishList.filter((wish) => wish.id !== id);
     setWishList(newWishList);
   };
 
@@ -26,8 +42,8 @@ export const ListWishes = () => {
           />
           <span>{wish.name}</span>
           <span>
-            <span>Edit</span>
-            <span>Remove</span>
+            <span onClick={() => editWishBox(wish.id)}>Edit</span>
+            <span onClick={() => removeWishBox(wish.id)}>Remove</span>
           </span>
         </li>
       ))}

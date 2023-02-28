@@ -16,9 +16,18 @@ export const WishListProvider = ({ children }) => {
     chocolates: [],
   });
 
+  const [counterChocolates, setCounterChocolates] = useState(null);
+
   return (
     <WishListContext.Provider
-      value={{ wishList, setWishList, currentBox, setCurrentBox }}
+      value={{
+        wishList,
+        setWishList,
+        currentBox,
+        setCurrentBox,
+        counterChocolates,
+        setCounterChocolates,
+      }}
     >
       {children}
     </WishListContext.Provider>

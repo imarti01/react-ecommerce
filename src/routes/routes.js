@@ -1,5 +1,9 @@
-import { HandleBoxWishList } from "../views/pages/HandleBoxWishList/HandleBoxWishList";
-import { WishList } from "../views/pages/WishList/WishList";
+import {
+  HandleBoxWishList,
+  WishList,
+  ActiveWishes,
+  CompletedWishes,
+} from "../views/pages";
 
 const routes = [
   {
@@ -11,6 +15,16 @@ const routes = [
     path: "/handleBoxWishList",
     exact: true,
     component: HandleBoxWishList,
+  },
+  {
+    path: "/activeWishes",
+    exact: true,
+    component: ActiveWishes,
+  },
+  {
+    path: "/completedWishes",
+    exact: true,
+    component: CompletedWishes,
   },
 ];
 

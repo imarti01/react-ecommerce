@@ -8,66 +8,19 @@ import { CardChocolateForm } from "../CardChocolateForm/CardChocolateForm";
 export const FormHandleBox = () => {
   const navigate = useNavigate();
   const newId = uuid();
+  const {
+    currentBox,
+    setCurrentBox,
+    wishList,
+    setWishList,
+    counterChocolates,
+    setCounterChocolates,
+  } = useWishList();
+  const { name, id, pcs, totalBox, isEditing } = currentBox;
 
-  const { currentBox, setCurrentBox, wishList, setWishList } = useWishList();
-  const { id, pcs, chocolates, totalBox } = currentBox;
-
-  const [counterChocolates, setCounterChocolates] = useState(null);
   useEffect(() => {
     if (!id) setCurrentBox({ ...currentBox, id: newId });
   }, [currentBox]);
-
-  const addChocolate = (chocolateToAdd) => {
-    const { name, price } = chocolateToAdd;
-    if (pcs !== 0) {
-      const idxChocolate = chocolates.findIndex((chocolate) => {
-        return chocolate.name === name;
-      });
-
-      if (idxChocolate < 0) {
-        setCurrentBox({
-          ...currentBox,
-          totalBox: totalBox + price,
-          chocolates: [...chocolates, { units: 1, name, price }],
-        });
-      } else {
-        const newArr = [...chocolates];
-        newArr[idxChocolate].units += 1;
-        setCurrentBox({
-          ...currentBox,
-          totalBox: totalBox + price,
-          chocolates: newArr,
-        });
-      }
-      setCounterChocolates(counterChocolates + 1);
-    } else {
-      //missatge primer size (useRef???)
-    }
-  };
-
-  const substractChocolate = (chocolateToSubstract) => {
-    const { name, price } = chocolateToSubstract;
-
-    const idxChocolate = chocolates.findIndex((chocolate) => {
-      return chocolate.name === name;
-    });
-
-    let newArr = [...chocolates];
-    if (newArr[idxChocolate].units > 1) {
-      newArr[idxChocolate].units -= 1;
-    } else {
-      newArr = newArr.filter(
-        (chocolate) => chocolate.name !== newArr[idxChocolate].name
-      );
-    }
-    setCurrentBox({
-      ...currentBox,
-      totalBox: totalBox - price,
-      chocolates: newArr,
-    });
-
-    setCounterChocolates(counterChocolates - 1);
-  };
 
   const handleCurrentBox = ({ target }) => {
     const { name, value } = target;
@@ -78,7 +31,15 @@ export const FormHandleBox = () => {
   };
 
   const addToWishList = () => {
-    setWishList([...wishList, currentBox]);
+    if (isEditing) {
+      const wishListWithoutCurrent = wishList.filter((wish) => wish.id !== id);
+      setWishList([
+        ...wishListWithoutCurrent,
+        { ...currentBox, isEditing: false },
+      ]);
+    } else {
+      setWishList([...wishList, currentBox]);
+    }
     navigate("/");
     setCurrentBox({
       id: "",
@@ -89,6 +50,7 @@ export const FormHandleBox = () => {
       totalBox: 0,
       chocolates: [],
     });
+    setCounterChocolates(null);
   };
 
   return (
@@ -98,29 +60,30 @@ export const FormHandleBox = () => {
         <input
           name="name"
           type="text"
-          value={currentBox.name}
+          value={name}
           onChange={handleCurrentBox}
         />
       </label>
-      <fieldset value={currentBox.size} onChange={handleCurrentBox}>
+      <fieldset onChange={handleCurrentBox}>
         <legend> Choose the size of your box:</legend>
-        {SizeBoxes.map((pcs) => {
+        {SizeBoxes.map((numPcs) => {
           return (
-            <label key={pcs + "pcs"}>
-              <input type="radio" name="pcs" value={pcs} key={pcs + "pcs"} />
-              {pcs + "pcs"}
+            <label key={numPcs + "pcs"}>
+              <input
+                type="radio"
+                name="pcs"
+                value={numPcs}
+                key={numPcs + "pcs"}
+                defaultChecked={numPcs == pcs}
+              />
+              {numPcs + "pcs"}
             </label>
           );
         })}
       </fieldset>
       <div>
         {ChocolatesInfo.map((chocolate) => (
-          <CardChocolateForm
-            chocolate={chocolate}
-            key={chocolate.name}
-            substractChocolate={substractChocolate}
-            addChocolate={addChocolate}
-          />
+          <CardChocolateForm chocolate={chocolate} key={chocolate.name} />
         ))}
       </div>
       <h3>Total:{totalBox.toFixed(2)}€</h3>

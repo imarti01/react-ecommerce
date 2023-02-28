@@ -1,3 +1,3 @@
 export * from "./ContainerList/ContainerList";
-export * from "./FilterWishes/FilterWishes";
+export * from "./NavFilterWishes/NavFilterWishes";
 export * from "./ListWishes/ListWishes";
