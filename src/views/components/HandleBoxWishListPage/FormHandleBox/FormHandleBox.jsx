@@ -117,7 +117,11 @@ export const FormHandleBox = () => {
           Total: {totalBox.toFixed(2)}€
         </h3>
         <div>
-          <button disabled={pcs != counterChocolates} onClick={addToWishList}>
+          <button
+            className="form-handle-box__footer--save-btn"
+            disabled={pcs != counterChocolates}
+            onClick={addToWishList}
+          >
             Save
           </button>
           <button onClick={cancelNewBox}>Cancel</button>

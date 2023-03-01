@@ -102,15 +102,27 @@
             margin: 0rem 0.3rem;
             padding: 0.2rem 0.7rem;
             cursor: pointer;
+          
 
             &:hover {
-                background-color: $green-color;
+                background-color: $dark-color;
+                color: $green-color;
             }
 
             &:disabled {
                 cursor: auto;
                 background-color: transparent;
+                color: $dark-color;
             }
+
+            &:active {
+                transform: scale(0.99);
+            }
+        }
+
+        &--save-btn {
+            background-color: $green-color;
+
         }
     }
 }
