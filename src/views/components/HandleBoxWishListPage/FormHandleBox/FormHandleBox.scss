@@ -1,0 +1,116 @@
+@import "../../../../scss/variables.scss";
+
+.form-handle-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 80vh;
+
+    &__first-second {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0rem 5rem;
+
+        &--name {
+            display: flex;
+            align-items: center;
+            
+            h3 {
+                margin: 0rem 1rem;
+                font-size: 2rem;
+                color: $green-color;
+            }
+
+            label {
+                margin-top: 0.4rem;
+            }
+
+            input {
+                margin-left: 1rem;
+                font-size: 1.3rem;
+                width: 17rem;
+                border: none;
+                border-bottom: 1px solid $green-color;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+            
+        }
+
+        &--size {
+            display: flex;
+            align-items: center;
+
+            h3 {
+                margin: 0rem 1rem;
+                font-size: 2rem;
+                color: $green-color;
+            }
+
+            fieldset {
+                width: 30rem;
+                padding: 0.5rem 1rem;
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid $green-color
+            }
+
+            input {
+                margin-right:0.2rem;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    &__container-chocolates {
+        position: relative;
+    
+        h3 {
+            position: absolute;
+            left: 4.6rem;
+            margin: 0rem 1rem;
+            font-size: 2rem;
+            color: $green-color;    
+        }
+
+        &--chocolates{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        height: 50%;
+        padding: 1rem 18rem;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 1.4rem;
+        padding: 0.5rem 5rem;
+
+        button {
+            font-size: 1.4rem;
+            margin: 0rem 0.3rem;
+            padding: 0.2rem 0.7rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $green-color;
+            }
+
+            &:disabled {
+                cursor: auto;
+                background-color: transparent;
+            }
+        }
+    }
+}

@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useWishList from "../../../../hooks/useWishList";
+import useWishList from "../../../hooks/useWishList";
+import "./ListWishes.scss";
 
-export const ListWishes = () => {
+export const ListWishes = ({ listToRender }) => {
   const navigate = useNavigate();
   const { wishList, setWishList, setCurrentBox, setCounterChocolates } =
     useWishList();
@@ -27,21 +28,18 @@ export const ListWishes = () => {
     setWishList(newWishList);
   };
 
-  useEffect(() => {
-    localStorage.setItem("wishes", JSON.stringify(wishList));
-  }, [wishList]);
-
   return (
-    <ul>
-      {wishList.map((wish) => (
-        <li key={wish.id}>
+    <ul className="ul">
+      {listToRender.map((wish) => (
+        <li className="ul__li" key={wish.id}>
           <input
+            className="ul__li--checkbox"
             type="checkbox"
             onChange={() => changeDoneState(wish.id)}
             checked={wish.done}
           />
-          <span>{wish.name}</span>
-          <span>
+          <span className="ul__li--name">{wish.name}</span>
+          <span className="ul__li--changes">
             <span onClick={() => editWishBox(wish.id)}>Edit</span>
             <span onClick={() => removeWishBox(wish.id)}>Remove</span>
           </span>

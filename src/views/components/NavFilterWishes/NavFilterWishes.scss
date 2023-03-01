@@ -1,0 +1,11 @@
+@import "../../../scss/variables.scss";
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__separating {
+        margin: 1rem;
+    }
+}

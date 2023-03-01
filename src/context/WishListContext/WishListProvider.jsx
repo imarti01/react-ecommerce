@@ -18,6 +18,10 @@ export const WishListProvider = ({ children }) => {
 
   const [counterChocolates, setCounterChocolates] = useState(null);
 
+  useEffect(() => {
+    localStorage.setItem("wishes", JSON.stringify(wishList));
+  }, [wishList]);
+
   return (
     <WishListContext.Provider
       value={{

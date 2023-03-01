@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import "./AddNewBox.scss";
 
 export const AddNewBox = () => {
   return (
-    <div>
+    <div className="add">
       <h4>Create a new box and add it to your wish list</h4>
       <Link to="/handleBoxWishList">
         <img

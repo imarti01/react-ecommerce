@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Baumans&display=swap");
+@import "./scss/variables.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Baumans", cursive;
+  color: $dark-color;
+  background-color: $light-color;
 }

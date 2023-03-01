@@ -1,0 +1,68 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/animations.scss";
+
+.ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 30rem;
+    padding: 2rem;
+
+    &__li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 1.2rem;
+
+        &--checkbox {
+            display: flex;
+	        appearance: none;
+	        background: $light-color;
+            border: 1px solid $dark-color;
+	        height: 1.2rem;
+	        width: 1.2rem;    
+            border-radius: 3px;   
+            cursor: pointer; 
+            
+            &::after {
+                content: '✔';
+                margin: auto;
+            }
+
+            &:not(:checked)::after {
+                color: transparent;
+                text-shadow: 0 0 0 transparent;
+                @include transitionCheckBox();
+            }
+            
+            &:checked::after {
+                color: $green-color;
+                text-shadow: 2px 3px 2px fade(black, 20);
+                @include transitionCheckBox();
+            }
+        }
+
+        &--name {
+            width: 67%;
+        }
+
+        &--changes {
+            width: 25%;
+
+           span{
+             font-size: 0.9rem;
+             padding: 0rem 0.4rem;
+             cursor: pointer;
+
+             &:hover {
+                color: $green-color;
+                background-color: $dark-color;
+                border-radius: 3px;
+             }
+           }  
+        }
+    }
+}

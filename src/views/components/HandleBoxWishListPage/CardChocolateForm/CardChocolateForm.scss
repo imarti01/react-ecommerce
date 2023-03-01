@@ -1,0 +1,42 @@
+@import "../../../../scss/variables.scss";
+
+.card-chocolate-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 6rem;
+    height: 9rem;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+
+    &__chocolate {
+        width: 4rem;
+        filter: drop-shadow(2px 2px 4px $dark-color);
+        background-color: transparent;
+    }
+
+    &__units-container {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+
+        button {
+            margin: 0.2rem;
+            border: none;
+            cursor: pointer;
+            color: $green-color;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            padding: 0;
+
+
+            &:disabled {
+                color: $light-color;
+                cursor: auto;
+                opacity: 0.5;
+            }
+        }
+    }
+}

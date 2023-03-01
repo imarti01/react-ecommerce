@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useWishList from "../../../../hooks/useWishList";
+import "./CardChocolateForm.scss";
 
 export const CardChocolateForm = ({ chocolate }) => {
   const { src, name, price } = chocolate;
@@ -71,11 +72,11 @@ export const CardChocolateForm = ({ chocolate }) => {
   }, [currentBox]);
 
   return (
-    <div>
-      <img src={src} alt={name} />
-      <h4>{price} €</h4>
-      <h4>{name}</h4>
-      <div>
+    <div className="card-chocolate-form">
+      <img className="card-chocolate-form__chocolate" src={src} alt={name} />
+      <h5>{name}</h5>
+      <h4>{price} €/u</h4>
+      <div className="card-chocolate-form__units-container">
         <button
           disabled={units < 1}
           onClick={() => substractChocolate(chocolate)}
