@@ -33,8 +33,6 @@ export const CardChocolateForm = ({ chocolate }) => {
         });
       }
       setCounterChocolates(counterChocolates + 1);
-    } else {
-      //missatge primer size (useRef???)
     }
   };
 
