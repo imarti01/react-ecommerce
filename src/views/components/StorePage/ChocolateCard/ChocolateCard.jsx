@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import useCartContext from "../../../../hooks/useCartContext";
+import { useCartContext } from "../../../../hooks/useCartContext";
 import "./ChocolateCard.scss";
 
 export const ChocolateCard = ({ name, desc, src, price, scrollBoxSection }) => {
@@ -42,7 +42,7 @@ export const ChocolateCard = ({ name, desc, src, price, scrollBoxSection }) => {
         chocolates: [],
       });
     }
-  }, [currentBox]);
+  }, [cart, chocolates, pcs, setCart, currentBox, setCurrentBox]);
 
   return (
     <div className="chocolate-card">

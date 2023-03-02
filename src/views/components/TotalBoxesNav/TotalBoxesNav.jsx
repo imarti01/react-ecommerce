@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useCartContext from "../../../hooks/useCartContext";
+import { useCartContext } from "../../../hooks/useCartContext";
 
 export const TotalBoxesNav = ({ className }) => {
   const { cart } = useCartContext();

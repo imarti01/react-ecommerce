@@ -1,0 +1,89 @@
+{
+    "chocolates": [
+        {
+          "id": 1,
+          "name": "DIAMANT",
+          "desc": "Praliné (Gianduja) with caramelised hazelnuts",
+          "price": 1.15,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619841/chocolates/chocolate2_cno0d8.png"
+        },
+        {
+          "id": 2,
+          "name": "PISTACHIO",
+          "desc": "Praliné made of pistachios",
+          "price": 1.2,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619841/chocolates/chocolate3_nk04pd.png"
+        },
+        {
+          "id": 3,
+          "name": "BRILLANT",
+          "desc": "Praliné (Gianduja) with crisped rice",
+          "price": 1.05,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619841/chocolates/chocolate4_dbdy9q.png"
+        },
+        {
+          "id": 4,
+          "name": "PRESTIGE",
+          "desc": "Pure caramel",
+          "price": 1.05,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619844/chocolates/chocolate6_yhiyif.png"
+        },
+        {
+          "id": 5,
+          "name": "DIVINE",
+          "desc": "Belgian milk chocolate and soft caramel",
+          "price": 1.2,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619844/chocolates/chocolate7_ho9lue.png"
+        },
+        {
+          "id": 6,
+          "name": "COFFEE",
+          "desc": "Praliné with Arabica coffee",
+          "price": 1.15,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619843/chocolates/chocolate8_xzvksn.png"
+        },
+        {
+          "id": 7,
+          "name": "CRIOLLO",
+          "desc": "Ganache with intense dark chocolate from Uganda",
+          "price": 1.2,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619843/chocolates/chocolate9_p5mtx1.png"
+        },
+        {
+          "id": 8,
+          "name": "HAZELNULT",
+          "desc": "Praliné made of hazelnuts",
+          "price": 1.05,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676906460/chocolates/chocolate17_ba6v1k.png"
+        },
+        {
+          "id": 9,
+          "name": "SOMMELIER",
+          "desc": "Praliné with touches of chocolate, vanilla and clove, and hints of figs",
+          "price": 1.2,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619842/chocolates/chocolate16_treqjn.png"
+        },
+        {
+          "id": 10,
+          "name": "GALERIE",
+          "desc": "Dark caramel",
+          "price": 1.15,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619842/chocolates/chocolate12_s949ch.png"
+        },
+        {
+          "id": 11,
+          "name": "PRALINÉ",
+          "desc": "Praliné (Gianduja) with pieces of nougatine",
+          "price": 1.1,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619842/chocolates/chocolate13_wfeswm.png"
+        },
+        {
+          "id": 12,
+          "name": "CARAMEL",
+          "desc": "Hazelnut praliné with roasted and caramelized sesame",
+          "price": 1.2,
+          "src": "https://res.cloudinary.com/duokspzx0/image/upload/v1676619842/chocolates/chocolate14_aay6fx.png"
+        }
+      ],
+    "sizeBoxes": [6, 10, 16, 24, 32, 48]
+}

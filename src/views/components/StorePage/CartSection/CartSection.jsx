@@ -1,4 +1,4 @@
-import useCartContext from "../../../../hooks/useCartContext";
+import { useCartContext } from "../../../../hooks/useCartContext";
 import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
 import { CurrentBoxDetail, SummaryCard } from "../index";
 

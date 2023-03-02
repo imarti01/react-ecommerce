@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import useCartContext from "../../../hooks/useCartContext";
+import { useCartContext } from "../../../hooks/useCartContext";
 import {
   NavBar,
   BoxesSection,

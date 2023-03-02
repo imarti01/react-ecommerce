@@ -1,14 +1,25 @@
 import "./BoxesSection.scss";
-import { SizeBoxes } from "../../../../db/db";
-import useCartContext from "../../../../hooks/useCartContext";
+import { useCartContext } from "../../../../hooks/useCartContext";
+import { useEffect, useState } from "react";
 
 export const BoxesSection = ({ refProps }) => {
   const { currentBox, setCurrentBox, setIsCartOpen } = useCartContext();
+
+  const [sizeBoxes, setSizeBoxes] = useState([]);
 
   const chooseBoxSize = (pcs) => {
     setCurrentBox({ ...currentBox, pcs });
     setIsCartOpen(true);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("http://localhost:3000/sizeBoxes");
+      const json = await data.json();
+      setSizeBoxes(json);
+    };
+    fetchData().catch(console.error);
+  }, []);
 
   return (
     <div className="boxes-section" ref={refProps}>
@@ -21,7 +32,7 @@ export const BoxesSection = ({ refProps }) => {
         Start by choosing the size of your box
       </p>
       <div className="boxes-section__container-sizes">
-        {SizeBoxes.map((pcs) => {
+        {sizeBoxes.map((pcs) => {
           return (
             <p key={pcs + "pcs"} onClick={() => chooseBoxSize(pcs)}>
               {pcs}pcs
