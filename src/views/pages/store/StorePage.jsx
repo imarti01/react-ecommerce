@@ -10,7 +10,7 @@ import {
 import "./StorePage.scss";
 
 export const StorePage = () => {
-  const { isCartOpen } = useCartContext();
+  const { state } = useCartContext();
 
   const boxSectionRef = useRef();
   const scrollBoxSection = () => {
@@ -20,7 +20,7 @@ export const StorePage = () => {
   return (
     <>
       <NavBar />
-      {isCartOpen && <CartSection />}
+      {state.isCartOpen && <CartSection />}
       <DescriptionSection />
       <BoxesSection refProps={boxSectionRef} />
       <ChocolatesSection scrollBoxSection={scrollBoxSection} />

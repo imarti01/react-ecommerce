@@ -1,15 +1,13 @@
-import { useCartContext } from "../../../../hooks/useCartContext";
+import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
 import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
 import { CurrentBoxDetail, SummaryCard } from "../index";
 
 import "./CartSection.scss";
 
 export const CartSection = () => {
-  const { cart, currentBox, setIsCartOpen } = useCartContext();
-
-  const closeCart = () => {
-    setIsCartOpen(false);
-  };
+  const { state, closeCart } = useCartContext();
+  const { cart } = state;
+  const { state: currentBox } = useCurrentBoxContext();
 
   return (
     <div className="cart-section">

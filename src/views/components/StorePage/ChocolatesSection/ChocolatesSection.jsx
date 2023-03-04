@@ -7,7 +7,7 @@ export const ChocolatesSection = ({ scrollBoxSection }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://localhost:3000/chocolates");
+      const data = await fetch("http://localhost:3004/chocolates");
       const json = await data.json();
       setChocolatesInfo(json);
     };

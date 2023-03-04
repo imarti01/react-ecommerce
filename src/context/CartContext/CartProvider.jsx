@@ -1,25 +1,30 @@
-import { useState } from "react";
+import { useReducer } from "react";
+import { cartReducer } from "../../reducers/cartReducer";
+import { types } from "../../types/types";
 import { CartContext } from "./CartContext";
 
+const initialState = {
+  cart: [],
+  isCartOpen: false,
+};
+
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const [currentBox, setCurrentBox] = useState({
-    units: 1,
-    pcs: 0,
-    chocolates: [],
-    total: 0,
-  });
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  const openCart = () => {
+    dispatch({ type: types.OPEN_CART });
+  };
+
+  const closeCart = () => {
+    dispatch({ type: types.CLOSE_CART });
+  };
 
   return (
     <CartContext.Provider
       value={{
-        cart,
-        setCart,
-        currentBox,
-        setCurrentBox,
-        isCartOpen,
-        setIsCartOpen,
+        state,
+        openCart,
+        closeCart,
       }}
     >
       {children}

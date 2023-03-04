@@ -1,25 +1,26 @@
 import "./BoxesSection.scss";
-import { useCartContext } from "../../../../hooks/useCartContext";
+import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
 import { useEffect, useState } from "react";
 
 export const BoxesSection = ({ refProps }) => {
-  const { currentBox, setCurrentBox, setIsCartOpen } = useCartContext();
+  const { openCart } = useCartContext();
+  const { chooseSize } = useCurrentBoxContext();
 
   const [sizeBoxes, setSizeBoxes] = useState([]);
 
-  const chooseBoxSize = (pcs) => {
-    setCurrentBox({ ...currentBox, pcs });
-    setIsCartOpen(true);
-  };
-
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://localhost:3000/sizeBoxes");
+      const data = await fetch("http://localhost:3004/sizeBoxes");
       const json = await data.json();
       setSizeBoxes(json);
     };
     fetchData().catch(console.error);
   }, []);
+
+  const chooseSizeBox = (pcs) => {
+    chooseSize(pcs);
+    openCart();
+  };
 
   return (
     <div className="boxes-section" ref={refProps}>
@@ -34,7 +35,7 @@ export const BoxesSection = ({ refProps }) => {
       <div className="boxes-section__container-sizes">
         {sizeBoxes.map((pcs) => {
           return (
-            <p key={pcs + "pcs"} onClick={() => chooseBoxSize(pcs)}>
+            <p key={pcs + "pcs"} onClick={() => chooseSizeBox(pcs)}>
               {pcs}pcs
             </p>
           );

@@ -1,0 +1,10 @@
+export const types = {
+  ADD_NEW_CHOC: "[current] add_new_choc",
+  INCREMENT_CHOC: "[current] increment_choc",
+  DECREMENT_CHOC: "[current] decrement_choc",
+  CHOOSE_SIZE: "[current] choose_size",
+  ADD_CART: "[cart] add_cart",
+  DELETE_CART: "[cart] delete_cart",
+  OPEN_CART: "[cart] open_cart",
+  CLOSE_CART: "[cart] close_cart",
+};
