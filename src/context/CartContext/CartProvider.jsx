@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const CartProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [cartState, dispatch] = useReducer(cartReducer, initialState);
 
   const openCart = () => {
     dispatch({ type: types.OPEN_CART });
@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
-        state,
+        cartState,
         openCart,
         closeCart,
       }}

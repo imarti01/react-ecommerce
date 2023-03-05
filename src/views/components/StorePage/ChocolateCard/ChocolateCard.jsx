@@ -4,7 +4,7 @@ import { useCurrentBoxContext, useCartContext } from "../../../../hooks";
 import "./ChocolateCard.scss";
 
 export const ChocolateCard = ({ name, desc, src, price, scrollBoxSection }) => {
-  const { state: currentBox, addChocolate } = useCurrentBoxContext();
+  const { currentBox, addChocolate } = useCurrentBoxContext();
   const { pcs } = currentBox;
   const { openCart } = useCartContext();
 

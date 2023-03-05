@@ -11,6 +11,8 @@ export const currentBoxReducer = (state, action) => {
     case types.ADD_NEW_CHOC:
       return {
         ...state,
+        counterPcs: state.counterPcs + 1,
+        total: state.total + payload.price,
         chocolates: [
           ...state.chocolates,
           {
@@ -23,7 +25,17 @@ export const currentBoxReducer = (state, action) => {
     case types.INCREMENT_CHOC:
       return {
         ...state,
-        chocolates: payload,
+        counterPcs: state.counterPcs + 1,
+        total: state.total + payload.price,
+        chocolates: payload.chocolates,
+      };
+
+    case types.DECREMENT_CHOC:
+      return {
+        ...state,
+        counterPcs: state.counterPcs - 1,
+        total: state.total - payload.price,
+        chocolates: payload.chocolates,
       };
 
     default:

@@ -5,9 +5,10 @@ import { CurrentBoxDetail, SummaryCard } from "../index";
 import "./CartSection.scss";
 
 export const CartSection = () => {
-  const { state, closeCart } = useCartContext();
-  const { cart } = state;
-  const { state: currentBox } = useCurrentBoxContext();
+  const { cartState, closeCart } = useCartContext();
+  const { cart } = cartState;
+  const { currentBox } = useCurrentBoxContext();
+  const { pcs } = currentBox;
 
   return (
     <div className="cart-section">
@@ -20,12 +21,7 @@ export const CartSection = () => {
               <h2>Your cart is empty.</h2>
             </div>
           )}
-          {currentBox.pcs !== 0 && (
-            <CurrentBoxDetail
-              pcs={currentBox.pcs}
-              chocolates={currentBox.chocolates}
-            />
-          )}
+          {pcs !== 0 && <CurrentBoxDetail />}
           {cart.length > 0 &&
             cart.map((box, idx) => {
               return (

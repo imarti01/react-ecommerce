@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useCartContext } from "../../../hooks/useCartContext";
 
 export const TotalBoxesNav = ({ className }) => {
-  const { state } = useCartContext();
+  const { cartState, openCart } = useCartContext();
 
   const [totalBoxes, setTotalBoxes] = useState(0);
 
   useEffect(() => {
-    state.cart.length > 0 && setTotalBoxes(state.cart.length);
-  }, [state]);
-  return <p className={className}>CART({totalBoxes})</p>;
+    cartState.cart.length > 0 && setTotalBoxes(cartState.cart.length);
+  }, [cartState]);
+  return (
+    <p className={className} onClick={openCart}>
+      CART({totalBoxes})
+    </p>
+  );
 };
