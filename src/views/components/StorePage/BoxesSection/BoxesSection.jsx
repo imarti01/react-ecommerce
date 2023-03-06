@@ -1,21 +1,16 @@
 import "./BoxesSection.scss";
-import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
-import { useEffect, useState } from "react";
+import {
+  useCartContext,
+  useCurrentBoxContext,
+  useFetch,
+} from "../../../../hooks";
+// import { useEffect, useState } from "react";
 
 export const BoxesSection = ({ refProps }) => {
   const { openCart } = useCartContext();
   const { chooseSize } = useCurrentBoxContext();
 
-  const [sizeBoxes, setSizeBoxes] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch("http://localhost:3004/sizeBoxes");
-      const json = await data.json();
-      setSizeBoxes(json);
-    };
-    fetchData().catch(console.error);
-  }, []);
+  const sizeBoxes = useFetch("http://localhost:3004/sizeBoxes");
 
   const chooseSizeBox = (pcs) => {
     chooseSize(pcs);
