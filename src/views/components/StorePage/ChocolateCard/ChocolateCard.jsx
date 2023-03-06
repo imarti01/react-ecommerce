@@ -5,7 +5,7 @@ import "./ChocolateCard.scss";
 
 export const ChocolateCard = ({ name, desc, src, price, scrollBoxSection }) => {
   const { currentBox, addChocolate } = useCurrentBoxContext();
-  const { pcs } = currentBox;
+  const { pcs, counterPcs } = currentBox;
   const { openCart } = useCartContext();
 
   const addCurrentBox = (name, price) => {

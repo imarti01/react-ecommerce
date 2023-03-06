@@ -1,34 +1,46 @@
 @import "../../../../scss/variables.scss";
 
 .box-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
-    border-bottom: 1px solid $dark-color;
+    justify-content:space-between;
+    border: 1px solid $green-color;
+    min-height: 40vh;
     width: 30vw;
     padding: 0.5rem;
 
-    &__title {
-        margin-bottom: 0.2rem;
-        padding: 0.1rem 0.3rem;
-    }
+    &__summary {
+        &--title {
+            margin-bottom: 0.2rem;
+            padding: 0.1rem 0.3rem;
+        }
+    
+        &--list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 28vw;
+            padding: 0.1rem 0rem 0.1rem 0.5rem;
 
-    &__list {
+            &--name {
+
+            }
+
+            &--units-price {
+                display: flex;
+                span {
+                    padding: 0rem 0.1rem;
+                }
+            }
+        }
+    }
+    
+    &__buy {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 0.1rem 0.3rem;
-
-        &--name {
-            width: 15rem;
-        }
-
-        &--units {
-            span {
-                padding: 0rem 0.1rem;
-            }
-        }
     }
 }

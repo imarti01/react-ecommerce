@@ -5,11 +5,13 @@ const routes = [
   {
     path: "/",
     exact: true,
+    isPrivate: false,
     component: MainPage,
   },
   {
     path: "/store",
     exact: true,
+    isPrivate: false,
     component: StorePage,
   },
 ];
