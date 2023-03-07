@@ -1,6 +1,4 @@
-import { MainPage } from "../views/pages/main/MainPage";
-import { OrderPage } from "../views/pages/order/OrderPage";
-import { StorePage } from "../views/pages/store/StorePage";
+import { MainPage, StorePage, OrderPage } from "../views/pages";
 
 const routes = [
   {
