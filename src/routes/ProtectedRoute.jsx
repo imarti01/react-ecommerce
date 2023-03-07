@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router";
 
 export const ProtectedRoute = ({ children }) => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState("kdkdkd");
 
   if (!token) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/order" replace />;
   }
 
   return children;
