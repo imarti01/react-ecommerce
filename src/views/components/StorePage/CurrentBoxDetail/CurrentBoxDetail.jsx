@@ -1,9 +1,32 @@
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { useCurrentBoxContext } from "../../../../hooks";
 import "./CurrentBoxDetail.scss";
 
 export const CurrentBoxDetail = () => {
   const { addChocolate, removeChocolate, currentBox } = useCurrentBoxContext();
   const { units, pcs, chocolates, total, counterPcs } = currentBox;
+
+  const navigate = useNavigate();
+
+  const addToCart = () => {
+    //falta afegir funció addCart
+    Swal.fire({
+      title: "The box has been added to the cart!",
+      text: "What do you want do now?",
+      icon: "success",
+      showCancelButton: "success",
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "CONTINUE WITH THE PURCHASE",
+      cancelButtonText: "KEEP BUYING",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/order");
+      }
+    });
+  };
+
   return (
     <div className="box-card">
       <div className="box-car__summary">
@@ -46,7 +69,9 @@ export const CurrentBoxDetail = () => {
         </p>
         <div>
           <button>Discard</button>
-          <button disabled={pcs !== counterPcs}>Buy</button>
+          <button disabled={pcs !== counterPcs} onClick={addToCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
