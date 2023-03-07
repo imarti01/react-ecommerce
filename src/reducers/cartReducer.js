@@ -1,11 +1,14 @@
 import { types } from "../types/types";
 
 export const cartReducer = (state, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case types.OPEN_CART:
       return { ...state, isCartOpen: true };
     case types.CLOSE_CART:
       return { ...state, isCartOpen: false };
+    case types.ADD_CART:
+      return { ...state, cart: [...state.cart, payload] };
     default:
       return state;
   }

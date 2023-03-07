@@ -1,16 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useCurrentBoxContext } from "../../../../hooks";
+import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
 import "./CurrentBoxDetail.scss";
 
 export const CurrentBoxDetail = () => {
-  const { addChocolate, removeChocolate, currentBox } = useCurrentBoxContext();
+  const { addChocolate, removeChocolate, currentBox, resetCurrentBox } =
+    useCurrentBoxContext();
+  const { addBoxToCart } = useCartContext();
   const { units, pcs, chocolates, total, counterPcs } = currentBox;
 
   const navigate = useNavigate();
 
   const addToCart = () => {
-    //falta afegir funció addCart
+    addBoxToCart(currentBox);
+    resetCurrentBox();
+
     Swal.fire({
       title: "The box has been added to the cart!",
       text: "What do you want do now?",

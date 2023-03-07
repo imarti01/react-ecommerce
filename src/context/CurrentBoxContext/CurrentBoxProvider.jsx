@@ -58,6 +58,10 @@ export const CurrentBoxProvider = ({ children }) => {
     });
   };
 
+  const resetCurrentBox = () => {
+    dispatch({ type: types.RESET_CURRRENT, payload: initialState });
+  };
+
   return (
     <CurrentBoxContext.Provider
       value={{
@@ -65,6 +69,7 @@ export const CurrentBoxProvider = ({ children }) => {
         chooseSize,
         addChocolate,
         removeChocolate,
+        resetCurrentBox,
       }}
     >
       {children}

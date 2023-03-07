@@ -17,17 +17,6 @@ export const ChocolateCard = ({ name, desc, src, price, scrollBoxSection }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const remainingPcs = pcs - chocolates.reduce((a, b) => a + b.units, 0);
-  //   if (remainingPcs === 0 && pcs !== 0) {
-  //     setCart([...cart, currentBox]);
-  //     setCurrentBox({
-  //       pcs: 0,
-  //       chocolates: [],
-  //     });
-  //   }
-  // }, [cart, chocolates, pcs, setCart, currentBox, setCurrentBox]);
-
   return (
     <div className="chocolate-card">
       <img src={src} alt={name} className="chocolate-card__img" />

@@ -19,12 +19,17 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: types.CLOSE_CART });
   };
 
+  const addBoxToCart = (box) => {
+    dispatch({ type: types.ADD_CART, payload: box });
+  };
+
   return (
     <CartContext.Provider
       value={{
         cartState,
         openCart,
         closeCart,
+        addBoxToCart,
       }}
     >
       {children}
