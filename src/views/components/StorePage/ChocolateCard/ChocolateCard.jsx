@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import { useCurrentBoxContext, useCartContext } from "../../../../hooks";
 
 import "./ChocolateCard.scss";
 
 export const ChocolateCard = ({ name, desc, src, price, scrollBoxSection }) => {
   const { currentBox, addChocolate } = useCurrentBoxContext();
-  const { pcs, counterPcs } = currentBox;
+  const { pcs } = currentBox;
   const { openCart } = useCartContext();
 
   const addCurrentBox = (name, price) => {

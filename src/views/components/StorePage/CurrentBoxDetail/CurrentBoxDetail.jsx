@@ -12,12 +12,13 @@ export const CurrentBoxDetail = () => {
     resetCurrentBox,
     changeUnitsBoxOnCurrent,
   } = useCurrentBoxContext();
-  const { addBoxToCart } = useCartContext();
+  const { addBoxToCart, closeCart } = useCartContext();
   const { id, units, pcs, chocolates, total, counterPcs } = currentBox;
 
   const navigate = useNavigate();
 
   const addToCart = () => {
+    closeCart();
     addBoxToCart(currentBox);
     resetCurrentBox();
 
