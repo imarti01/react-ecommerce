@@ -23,11 +23,14 @@ export const CartSection = () => {
           )}
           {pcs !== 0 && <CurrentBoxDetail />}
           {cart.length > 0 &&
-            cart.map((box, idx) => {
+            cart.map(({ id, units, pcs, chocolates, total }, idx) => {
               return (
                 <SummaryCard
-                  pcs={box.pcs}
-                  chocolates={box.chocolates}
+                  id={id}
+                  units={units}
+                  pcs={pcs}
+                  chocolates={chocolates}
+                  total={total}
                   key={"box" + (idx + 1)}
                 />
               );

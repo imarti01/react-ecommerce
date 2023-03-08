@@ -10,6 +10,7 @@ const initialState = {
 
 export const CartProvider = ({ children }) => {
   const [cartState, dispatch] = useReducer(cartReducer, initialState);
+  const { cart } = cartState;
 
   const openCart = () => {
     dispatch({ type: types.OPEN_CART });
@@ -23,6 +24,13 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: types.ADD_CART, payload: box });
   };
 
+  const changeUnitsBoxOnCart = (idBox, newUnits) => {
+    const newArrCart = cart.map((box) => {
+      return box.id === idBox ? { ...box, units: parseInt(newUnits) } : box;
+    });
+    dispatch({ type: types.CHANGE_UNITS, payload: newArrCart });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -30,6 +38,7 @@ export const CartProvider = ({ children }) => {
         openCart,
         closeCart,
         addBoxToCart,
+        changeUnitsBoxOnCart,
       }}
     >
       {children}

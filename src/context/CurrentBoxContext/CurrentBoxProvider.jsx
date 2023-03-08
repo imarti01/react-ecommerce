@@ -2,8 +2,10 @@ import { useReducer } from "react";
 import { currentBoxReducer } from "../../reducers/currentBoxReducer";
 import { types } from "../../types/types";
 import { CurrentBoxContext } from "./CurrentBoxContext";
+import uuid from "react-uuid";
 
 const initialState = {
+  id: uuid(),
   units: 1,
   pcs: 0,
   counterPcs: 0,
@@ -62,6 +64,10 @@ export const CurrentBoxProvider = ({ children }) => {
     dispatch({ type: types.RESET_CURRRENT, payload: initialState });
   };
 
+  const changeUnitsBoxOnCurrent = (idBox, newUnits) => {
+    dispatch({ type: types.CHANGE_UNITS_CURRENT, payload: parseInt(newUnits) });
+  };
+
   return (
     <CurrentBoxContext.Provider
       value={{
@@ -70,6 +76,7 @@ export const CurrentBoxProvider = ({ children }) => {
         addChocolate,
         removeChocolate,
         resetCurrentBox,
+        changeUnitsBoxOnCurrent,
       }}
     >
       {children}

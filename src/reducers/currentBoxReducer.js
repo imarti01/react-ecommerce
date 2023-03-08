@@ -38,6 +38,9 @@ export const currentBoxReducer = (state, action) => {
         chocolates: payload.chocolates,
       };
 
+    case types.CHANGE_UNITS_CURRENT:
+      return { ...state, units: payload };
+
     case types.RESET_CURRRENT:
       return payload;
 

@@ -1,6 +1,10 @@
+import { useCartContext } from "../../../../hooks";
+import { UnitsBox } from "../UnitsBox/UnitsBox";
 import "./SummaryCard.scss";
 
-export const SummaryCard = ({ box, pcs, chocolates }) => {
+export const SummaryCard = ({ id, units, pcs, total, chocolates }) => {
+  const { changeUnitsBoxOnCart } = useCartContext();
+
   return (
     <div>
       <h3>BOX {pcs} PCS</h3>
@@ -10,11 +14,12 @@ export const SummaryCard = ({ box, pcs, chocolates }) => {
           return idx === 0 ? unitsName : ", " + unitsName;
         })}
       </p>
-      <div>
-        <p>
-          <span>-</span> {} <span>+</span>
-        </p>
-      </div>
+      <UnitsBox
+        changeUnitsBoxProvider={changeUnitsBoxOnCart}
+        id={id}
+        units={units}
+        total={total}
+      />
     </div>
   );
 };

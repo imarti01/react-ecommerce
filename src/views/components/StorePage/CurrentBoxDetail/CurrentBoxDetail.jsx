@@ -1,13 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
+import { UnitsBox } from "../UnitsBox/UnitsBox";
 import "./CurrentBoxDetail.scss";
 
 export const CurrentBoxDetail = () => {
-  const { addChocolate, removeChocolate, currentBox, resetCurrentBox } =
-    useCurrentBoxContext();
+  const {
+    addChocolate,
+    removeChocolate,
+    currentBox,
+    resetCurrentBox,
+    changeUnitsBoxOnCurrent,
+  } = useCurrentBoxContext();
   const { addBoxToCart } = useCartContext();
-  const { units, pcs, chocolates, total, counterPcs } = currentBox;
+  const { id, units, pcs, chocolates, total, counterPcs } = currentBox;
 
   const navigate = useNavigate();
 
@@ -65,12 +71,12 @@ export const CurrentBoxDetail = () => {
         })}
       </div>
       <div className="box-card__buy">
-        <p>
-          <span>-</span>
-          {units}
-          <span>+</span>
-          {total.toFixed(2)}€
-        </p>
+        <UnitsBox
+          total={total}
+          id={id}
+          units={units}
+          changeUnitsBoxProvider={changeUnitsBoxOnCurrent}
+        />
         <div>
           <button>Discard</button>
           <button disabled={pcs !== counterPcs} onClick={addToCart}>
