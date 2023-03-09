@@ -3,9 +3,10 @@ import {
   MainPage,
   StorePage,
   OrderPage,
-  Dashboard,
   LoginPage,
   RegisterPage,
+  AddressPage,
+  DashboardPage,
 } from "../views/pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
@@ -27,6 +28,14 @@ export const router = createBrowserRouter([
     element: <RegisterPage />,
   },
   {
+    path: "address",
+    element: (
+      <ProtectedRoute>
+        <AddressPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
     path: "order",
     element: (
       <ProtectedRoute>
@@ -38,7 +47,7 @@ export const router = createBrowserRouter([
     path: "dashboard",
     element: (
       <ProtectedRoute>
-        <Dashboard />
+        <DashboardPage />
       </ProtectedRoute>
     ),
   },

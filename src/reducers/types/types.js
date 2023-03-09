@@ -1,4 +1,6 @@
 export const types = {
+  LOGIN: "[auth] login",
+  REGISTER: "[auth] register",
   ADD_NEW_CHOC: "[current] add_new_choc",
   INCREMENT_CHOC: "[current] increment_choc",
   DECREMENT_CHOC: "[current] decrement_choc",
