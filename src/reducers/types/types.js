@@ -12,4 +12,5 @@ export const types = {
   OPEN_CART: "[cart] open_cart",
   CLOSE_CART: "[cart] close_cart",
   CHANGE_UNITS: "[cart] change_units",
+  CHOOSE_ADDRESS: "[cart] choose_address",
 };

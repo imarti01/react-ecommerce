@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useCartContext } from "../../../hooks/useCartContext";
 import {
   NavBar,
@@ -6,7 +6,6 @@ import {
   DescriptionSection,
   ChocolatesSection,
   CartSection,
-  CurrentBoxDetail,
 } from "../../components/StorePage/index";
 import "./StorePage.scss";
 
@@ -25,7 +24,6 @@ export const StorePage = () => {
       <DescriptionSection />
       <BoxesSection refProps={boxSectionRef} />
       <ChocolatesSection scrollBoxSection={scrollBoxSection} />
-      <CurrentBoxDetail />
     </div>
   );
 };

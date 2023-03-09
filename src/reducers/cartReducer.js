@@ -11,6 +11,8 @@ export const cartReducer = (state, action) => {
       return { ...state, cart: [...state.cart, payload] };
     case types.CHANGE_UNITS:
       return { ...state, cart: payload };
+    case types.CHOOSE_ADDRESS:
+      return { ...state, address: payload };
     default:
       return state;
   }

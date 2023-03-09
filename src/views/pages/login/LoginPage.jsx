@@ -1,4 +1,4 @@
-import { FormLogin } from "../../components/AuthPages.jsx/FormLogin/FormLogin";
+import { FormLogin } from "../../components/AuthPages/FormLogin/FormLogin";
 import { RedirectTo } from "../../components/AuthPages/RedirectTo/RedirectTo";
 
 export const LoginPage = () => {

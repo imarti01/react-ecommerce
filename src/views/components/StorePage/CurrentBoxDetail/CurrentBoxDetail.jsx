@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
-import { UnitsBox } from "../UnitsBox/UnitsBox";
+import { UnitsBox } from "../../UnitsBox/UnitsBox";
 import "./CurrentBoxDetail.scss";
 
 export const CurrentBoxDetail = () => {

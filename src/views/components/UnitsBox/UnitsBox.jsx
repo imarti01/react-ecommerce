@@ -8,7 +8,6 @@ export const UnitsBox = ({ total, id, units, changeUnitsBoxProvider }) => {
   };
 
   const changeUnitsBox = () => {
-    console.log(id);
     changeUnitsBoxProvider(id, unitsInput);
   };
 

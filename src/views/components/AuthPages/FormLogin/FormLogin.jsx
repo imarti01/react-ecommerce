@@ -21,7 +21,6 @@ export const FormLogin = () => {
 
   const submitLogin = (e) => {
     e.preventDefault();
-    console.log(user);
     if (user.length < 1 || user[0].password !== formLogin.password) {
       Swal.fire({
         icon: "error",

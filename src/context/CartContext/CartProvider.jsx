@@ -6,6 +6,7 @@ import { CartContext } from "./CartContext";
 const initialState = {
   cart: [],
   isCartOpen: false,
+  address: {},
 };
 
 export const CartProvider = ({ children }) => {
@@ -31,6 +32,10 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: types.CHANGE_UNITS, payload: newArrCart });
   };
 
+  const chooseAddress = (address) => {
+    dispatch({ type: types.CHOOSE_ADDRESS, payload: address });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -39,6 +44,7 @@ export const CartProvider = ({ children }) => {
         closeCart,
         addBoxToCart,
         changeUnitsBoxOnCart,
+        chooseAddress,
       }}
     >
       {children}
