@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useAuthContext } from "../../../../hooks";
+import { useAuthContext, useCartContext } from "../../../../hooks";
 import { useFetch } from "../../../../hooks/useFetch";
 
 export const FormRegister = () => {
   const { register } = useAuthContext();
+  const { cart } = useCartContext();
+  console.log(cart);
   const navigate = useNavigate();
 
   const [formRegister, setFormRegister] = useState({

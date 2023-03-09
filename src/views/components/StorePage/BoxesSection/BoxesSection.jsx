@@ -4,7 +4,6 @@ import {
   useCurrentBoxContext,
   useFetch,
 } from "../../../../hooks";
-// import { useEffect, useState } from "react";
 
 export const BoxesSection = ({ refProps }) => {
   const { openCart } = useCartContext();

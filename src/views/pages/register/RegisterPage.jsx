@@ -1,5 +1,5 @@
-import { FormRegister } from "../../components/AuthPages.jsx/FormRegister/FormRegister";
-import { RedirectTo } from "../../components/AuthPages.jsx/RedirectTo/RedirectTo";
+import { FormRegister } from "../../components/AuthPages/FormRegister/FormRegister";
+import { RedirectTo } from "../../components/AuthPages/RedirectTo/RedirectTo";
 
 export const RegisterPage = () => {
   return (

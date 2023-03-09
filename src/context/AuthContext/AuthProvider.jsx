@@ -1,5 +1,4 @@
 import React, { useReducer } from "react";
-import { useFetch } from "../../hooks";
 import { authReducer } from "../../reducers/authReducer";
 import { types } from "../../reducers/types/types";
 import { AuthContext } from "./AuthContext";
