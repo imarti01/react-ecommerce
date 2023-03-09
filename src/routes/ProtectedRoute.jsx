@@ -5,7 +5,7 @@ export const ProtectedRoute = ({ children }) => {
   const [token, setToken] = useState("kdkdkd");
 
   if (!token) {
-    return <Navigate to="/order" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   return children;

@@ -1,5 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import { MainPage, StorePage, OrderPage, Dashboard } from "../views/pages";
+import {
+  MainPage,
+  StorePage,
+  OrderPage,
+  Dashboard,
+  LoginPage,
+  RegisterPage,
+} from "../views/pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 export const router = createBrowserRouter([
@@ -12,8 +19,20 @@ export const router = createBrowserRouter([
     element: <StorePage />,
   },
   {
+    path: "login",
+    element: <LoginPage />,
+  },
+  {
+    path: "register",
+    element: <RegisterPage />,
+  },
+  {
     path: "order",
-    element: <OrderPage />,
+    element: (
+      <ProtectedRoute>
+        <OrderPage />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "dashboard",

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "../MainPage/MainContainer.scss";
 
-export const ButtonBuy = ({ link, className }) => {
+export const ButtonNextPage = ({ link, className, textButton }) => {
   return (
     <button className={className}>
-      <Link to={link}>BUY NOW</Link>
+      <Link to={link}>{textButton}</Link>
     </button>
   );
 };

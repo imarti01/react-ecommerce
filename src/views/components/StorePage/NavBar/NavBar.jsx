@@ -6,7 +6,10 @@ export const NavBar = () => {
     <nav className="navbar">
       <p>CONTACT</p>
       <p className="navbar__gloria">GLÒRIA</p>
-      <TotalBoxesNav />
+      <div className="navbar__right-container">
+        <p>LOGIN</p>
+        <TotalBoxesNav />
+      </div>
     </nav>
   );
 };

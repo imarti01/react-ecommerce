@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { currentBoxReducer } from "../../reducers/currentBoxReducer";
-import { types } from "../../types/types";
+import { types } from "../../reducers/types/types";
 import { CurrentBoxContext } from "./CurrentBoxContext";
 import uuid from "react-uuid";
 
