@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuthContext } from "../../../../hooks";
@@ -8,23 +8,23 @@ export const FormRegister = () => {
   const { register } = useAuthContext();
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
+  const [formRegister, setFormRegister] = useState({
     name: "",
     surname: "",
     email: "",
     password: "",
   });
 
-  const handleFormData = ({ target }) => {
+  const handleFormRegister = ({ target }) => {
     const { name, value } = target;
-    setFormData({
-      ...formData,
+    setFormRegister({
+      ...formRegister,
       [name]: value,
     });
   };
 
   const isAlreadyRegistered = useFetch(
-    `http://localhost:3004/users?email=${formData.email}`
+    `http://localhost:3004/users?email=${formRegister.email}`
   );
 
   const submitRegister = (e) => {
@@ -36,7 +36,7 @@ export const FormRegister = () => {
         footer: '<a href="http://localhost:3000/login">SIGN IN</a>',
       });
     } else {
-      register(formData);
+      register(formRegister);
       navigate("/address");
     }
   };
@@ -48,8 +48,8 @@ export const FormRegister = () => {
         <input
           type="text"
           name="name"
-          value={formData.name}
-          onChange={handleFormData}
+          value={formRegister.name}
+          onChange={handleFormRegister}
           required
         />
       </label>
@@ -58,8 +58,8 @@ export const FormRegister = () => {
         <input
           type="text"
           name="surname"
-          value={formData.surname}
-          onChange={handleFormData}
+          value={formRegister.surname}
+          onChange={handleFormRegister}
           required
         />
       </label>
@@ -68,8 +68,8 @@ export const FormRegister = () => {
         <input
           type="email"
           name="email"
-          value={formData.email}
-          onChange={handleFormData}
+          value={formRegister.email}
+          onChange={handleFormRegister}
           required
         />
       </label>
@@ -78,8 +78,8 @@ export const FormRegister = () => {
         <input
           type="password"
           name="password"
-          value={formData.password}
-          onChange={handleFormData}
+          value={formRegister.password}
+          onChange={handleFormRegister}
           required
         />
       </label>

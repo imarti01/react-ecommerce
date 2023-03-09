@@ -19,8 +19,13 @@ export const AuthProvider = ({ children }) => {
     }).catch((error) => console.error(error));
     dispatch({ type: types.REGISTER, payload: newUser.email });
   };
+
+  const login = (user) => {
+    dispatch({ type: types.LOGIN, payload: user });
+  };
+
   return (
-    <AuthContext.Provider value={{ authState, register }}>
+    <AuthContext.Provider value={{ authState, register, login }}>
       {children}
     </AuthContext.Provider>
   );
