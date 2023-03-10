@@ -2,6 +2,7 @@ export const types = {
   LOGIN: "[auth] login",
   REGISTER: "[auth] register",
   LOGOUT: "[auth] logout",
+  GET_USER_DATA: "[auth] get_user_data",
   ADD_NEW_CHOC: "[current] add_new_choc",
   INCREMENT_CHOC: "[current] increment_choc",
   DECREMENT_CHOC: "[current] decrement_choc",

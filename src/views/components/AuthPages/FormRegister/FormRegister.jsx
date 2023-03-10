@@ -16,6 +16,9 @@ export const FormRegister = () => {
     surname: "",
     email: "",
     password: "",
+    savedAddress: [],
+    purchaseHistory: [],
+    currentOrders: [],
   });
 
   const handleFormRegister = ({ target }) => {
@@ -38,6 +41,14 @@ export const FormRegister = () => {
         title: "Already exists an account associated with this email!",
       });
     } else {
+      fetch("http://localhost:3004/users", {
+        method: "POST",
+        body: JSON.stringify(formRegister),
+        headers: {
+          "content-type": "application/json",
+        },
+      }).catch((error) => console.error(error));
+
       register(formRegister);
       navigate("/address");
     }

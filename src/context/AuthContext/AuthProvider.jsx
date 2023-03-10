@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { authReducer } from "../../reducers/authReducer";
 import { types } from "../../reducers/types/types";
 import { AuthContext } from "./AuthContext";
@@ -7,28 +7,31 @@ const init = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   return {
     isLogged: !!user,
-    userId: user,
+    user: user,
   };
 };
 
 export const AuthProvider = ({ children }) => {
   const [authState, dispatch] = useReducer(authReducer, {}, init);
 
-  const register = (newUserId) => {
-    localStorage.setItem("user", JSON.stringify(newUserId.id));
-    fetch("http://localhost:3004/users", {
-      method: "POST",
-      body: JSON.stringify(newUserId),
-      headers: {
-        "content-type": "application/json",
-      },
-    }).catch((error) => console.error(error));
-    dispatch({ type: types.REGISTER, payload: newUserId });
+  useEffect(() => {
+    if (authState.isLogged) {
+      fetch(`http://localhost:3004/users/${authState.user.id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          dispatch({ type: types.GET_USER_DATA, payload: data });
+        });
+    }
+  }, []);
+
+  const register = (newUser) => {
+    localStorage.setItem("user", JSON.stringify({ id: newUser.id }));
+    dispatch({ type: types.REGISTER, payload: newUser });
   };
 
-  const login = (userId) => {
-    localStorage.setItem("user", JSON.stringify(userId));
-    dispatch({ type: types.LOGIN, payload: userId });
+  const login = (user) => {
+    localStorage.setItem("user", JSON.stringify({ id: user.id }));
+    dispatch({ type: types.LOGIN, payload: user });
   };
 
   const logout = () => {

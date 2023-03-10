@@ -95,18 +95,83 @@
   ],
   "users": [
     {
-      "id": "afd81506-0153-5bc4-68c4-683134c7f17a",
-      "name": "Isaura",
-      "surname": "Martí",
-      "email": "isaura@isaura.com",
-      "password": "12345"
-    },
-    {
-      "id": "1d693d04-12b2-3f6f-80fa-2c54f5f3edee",
+      "id": "12504c39-b91b-aa6b-0f6f-9ff4e86804b8",
       "name": "Miquel",
       "surname": "Abella",
       "email": "miquel@miquel.com",
-      "password": "12345"
+      "password": "12345",
+      "savedAddress": [
+        {
+          "address": "Álvaro, 1",
+          "zip": "43000",
+          "city": "Toronto",
+          "phone": "666666666"
+        }
+      ],
+      "purchaseHistory": [],
+      "currentOrders": []
+    },
+    {
+      "id": "e067a57d-11a3-8aed-ddff-2110c1c689b0",
+      "name": "Isaura",
+      "surname": "Martí",
+      "email": "isaura@isaura.com",
+      "password": "12345",
+      "savedAddress": [
+        {
+          "address": "Álvaro, 1",
+          "zip": "43000",
+          "city": "Toronto",
+          "phone": "666666666"
+        }
+      ],
+      "purchaseHistory": [
+        {
+          "orderDate": "10/3/2023",
+          "boxes": [
+            {
+              "id": "f4c03d84-03e0-3bde-9840-59d0e1479a5a",
+              "units": 2,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 1,
+                  "name": "DIVINE",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "PRESTIGE",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "COFFEE",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "HAZELNULT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "CRIOLLO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "SOMMELIER",
+                  "price": 1.2
+                }
+              ],
+              "total": 6.8500000000000005
+            }
+          ]
+        }
+      ],
+      "currentOrders": []
     }
   ]
 }

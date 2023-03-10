@@ -28,7 +28,7 @@ export const FormLogin = () => {
         text: "Check that they are correct or, in case you are not yet registered, you should do so first",
       });
     } else {
-      login(user[0].id);
+      login(user[0]);
       navigate("/address");
     }
   };

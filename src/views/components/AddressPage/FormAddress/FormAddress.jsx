@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext, useFetch } from "../../../../hooks";
 import { useCartContext } from "../../../../hooks/useCartContext";
 
 export const FormAddress = () => {
   const { chooseAddress } = useCartContext();
+  const { authState } = useAuthContext();
+  const { user } = authState;
   const navigate = useNavigate();
+  const inputRef = useRef();
+
   const [formAddress, setFormAddress] = useState({
     address: "",
     zip: "",
@@ -22,6 +27,20 @@ export const FormAddress = () => {
 
   const submitFormAddress = (e) => {
     e.preventDefault();
+
+    if (inputRef.current.checked) {
+      fetch(`http://localhost:3004/users/${user.id}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          ...user,
+          savedAddress: [...user.savedAddress, formAddress],
+        }),
+        headers: {
+          "content-type": "application/json",
+        },
+      }).catch((error) => console.error(error));
+    }
+
     chooseAddress(formAddress);
     navigate("/order");
   };
@@ -74,7 +93,7 @@ export const FormAddress = () => {
         />
       </label>
       <label>
-        <input type="checkbox" />
+        <input type="checkbox" ref={inputRef} />
         Save this address for future purchases
       </label>
       <button>CONTINUE</button>

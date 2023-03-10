@@ -33,7 +33,7 @@ export const CurrentBoxDetail = () => {
       cancelButtonText: "KEEP BUYING",
     }).then((result) => {
       if (result.isConfirmed) {
-        navigate("/login");
+        navigate("/address");
       }
     });
   };
