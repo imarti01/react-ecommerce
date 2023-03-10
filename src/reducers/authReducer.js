@@ -4,9 +4,11 @@ export const authReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
     case types.REGISTER:
-      return { user: payload, isLogged: true };
+      return { userId: payload, isLogged: true };
     case types.LOGIN:
-      return { user: payload, isLogged: true };
+      return { userId: payload, isLogged: true };
+    case types.LOGOUT:
+      return { userId: "", isLogged: false };
     default:
       return state;
   }

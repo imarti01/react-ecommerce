@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuthContext } from "../../../../hooks";
 import { useFetch } from "../../../../hooks/useFetch";
+import uuid from "react-uuid";
 
 export const FormRegister = () => {
   const { register } = useAuthContext();
@@ -10,6 +11,7 @@ export const FormRegister = () => {
   const navigate = useNavigate();
 
   const [formRegister, setFormRegister] = useState({
+    id: uuid(),
     name: "",
     surname: "",
     email: "",

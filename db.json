@@ -95,18 +95,18 @@
   ],
   "users": [
     {
+      "id": "afd81506-0153-5bc4-68c4-683134c7f17a",
       "name": "Isaura",
       "surname": "Martí",
       "email": "isaura@isaura.com",
-      "password": "12345",
-      "id": 1
+      "password": "12345"
     },
     {
+      "id": "1d693d04-12b2-3f6f-80fa-2c54f5f3edee",
       "name": "Miquel",
       "surname": "Abella",
       "email": "miquel@miquel.com",
-      "password": "12345",
-      "id": 2
+      "password": "12345"
     }
   ]
 }

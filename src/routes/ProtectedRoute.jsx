@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { Navigate } from "react-router";
+import { useAuthContext } from "../hooks";
 
 export const ProtectedRoute = ({ children }) => {
-  const [token, setToken] = useState("kdkdkd");
+  const { authState } = useAuthContext();
 
-  if (!token) {
+  if (!authState.isLogged) {
     return <Navigate to="/login" replace />;
   }
 
