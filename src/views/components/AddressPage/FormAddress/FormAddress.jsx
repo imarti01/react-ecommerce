@@ -35,15 +35,19 @@ export const FormAddress = () => {
           name="address"
           value={formAddress.address}
           onChange={handleFormAddress}
+          required
         />
       </label>
       <label>
         Zip Code:
         <input
           type="text"
+          pattern="[0-9]{5}"
+          maxLength="19"
           name="zip"
           value={formAddress.zip}
           onChange={handleFormAddress}
+          required
         />
       </label>
       <label>
@@ -53,16 +57,25 @@ export const FormAddress = () => {
           name="city"
           value={formAddress.city}
           onChange={handleFormAddress}
+          required
         />
       </label>
       <label>
         Phone:
         <input
-          type="text"
+          type="tel"
           name="phone"
+          pattern="[0-9]{9}"
+          minLength="9"
+          maxLength="9"
           value={formAddress.phone}
           onChange={handleFormAddress}
+          required
         />
+      </label>
+      <label>
+        <input type="checkbox" />
+        Save this address for future purchases
       </label>
       <button>CONTINUE</button>
     </form>

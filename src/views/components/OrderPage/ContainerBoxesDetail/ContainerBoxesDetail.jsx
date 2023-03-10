@@ -20,10 +20,13 @@ export const ContainerBoxesDetail = () => {
           />
         ))}
         <div>
-          <label>
-            Do you have any discount code?
-            <input type="text" />
-          </label>
+          <div>
+            <label>
+              Do you have any discount code?
+              <input type="text" />
+            </label>
+            <button>OK</button>
+          </div>
           <div>
             <h3>discount:</h3>
             <h3>shipping: </h3>
@@ -31,7 +34,7 @@ export const ContainerBoxesDetail = () => {
           </div>
         </div>
       </div>
-      <ButtonNextPage link="./payment" className="" textButton="CONTINUE" />
+      <ButtonNextPage link="/payment" className="" textButton="CONTINUE" />
     </div>
   );
 };

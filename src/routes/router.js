@@ -7,6 +7,8 @@ import {
   RegisterPage,
   AddressPage,
   DashboardPage,
+  PaymentPage,
+  CompletedOrderPage,
 } from "../views/pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
@@ -40,6 +42,22 @@ export const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <OrderPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "payment",
+    element: (
+      <ProtectedRoute>
+        <PaymentPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "completed",
+    element: (
+      <ProtectedRoute>
+        <CompletedOrderPage />
       </ProtectedRoute>
     ),
   },
