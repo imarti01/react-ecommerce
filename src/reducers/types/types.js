@@ -3,6 +3,8 @@ export const types = {
   REGISTER: "[auth] register",
   LOGOUT: "[auth] logout",
   GET_USER_DATA: "[auth] get_user_data",
+  SAVE_ADDRESS: "[auth] save_address",
+  SAVE_PURCHASE: "[auth] save_purchase",
   ADD_NEW_CHOC: "[current] add_new_choc",
   INCREMENT_CHOC: "[current] increment_choc",
   DECREMENT_CHOC: "[current] decrement_choc",

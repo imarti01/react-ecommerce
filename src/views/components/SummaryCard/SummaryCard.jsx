@@ -1,5 +1,5 @@
-import { useCartContext } from "../../../../hooks";
-import { UnitsBox } from "../../UnitsBox/UnitsBox";
+import { useCartContext } from "../../../hooks";
+import { UnitsBox } from "../UnitsBox/UnitsBox";
 import "./SummaryCard.scss";
 
 export const SummaryCard = ({ id, units, pcs, total, chocolates }) => {

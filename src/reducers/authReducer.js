@@ -10,7 +10,12 @@ export const authReducer = (state, action) => {
     case types.LOGOUT:
       return { user: "", isLogged: false };
     case types.GET_USER_DATA:
-      return { user: payload, isLogged: true };
+      return { ...state, user: payload };
+    case types.SAVE_ADDRESS:
+      return { ...state, user: { ...state.user, savedAddress: payload } };
+    case types.SAVE_PURCHASE:
+      return { ...state, user: { ...state.user, purchaseHistory: payload } };
+
     default:
       return state;
   }

@@ -3,7 +3,7 @@ import { useAuthContext, useCartContext } from "../../../../hooks";
 
 export const PaymentForm = () => {
   const navigate = useNavigate();
-  const { authState } = useAuthContext();
+  const { authState, savePurchaseHistory } = useAuthContext();
   const { user } = authState;
   const { cartState } = useCartContext();
   const { cart } = cartState;
@@ -12,20 +12,20 @@ export const PaymentForm = () => {
     e.preventDefault();
 
     const date = new Date().toLocaleDateString();
+    const purchase = { orderDate: date, boxes: cart, status: "confirmed" };
+
     fetch(`http://localhost:3004/users/${user.id}`, {
       method: "PUT",
       body: JSON.stringify({
         ...user,
-        purchaseHistory: [
-          ...user.purchaseHistory,
-          { orderDate: date, boxes: cart },
-        ],
+        purchaseHistory: [...user.purchaseHistory, purchase],
       }),
       headers: {
         "content-type": "application/json",
       },
     }).catch((error) => console.error(error));
 
+    savePurchaseHistory(purchase);
     navigate("/completed");
   };
 

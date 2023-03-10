@@ -18,7 +18,6 @@ export const FormRegister = () => {
     password: "",
     savedAddress: [],
     purchaseHistory: [],
-    currentOrders: [],
   });
 
   const handleFormRegister = ({ target }) => {

@@ -95,24 +95,7 @@
   ],
   "users": [
     {
-      "id": "12504c39-b91b-aa6b-0f6f-9ff4e86804b8",
-      "name": "Miquel",
-      "surname": "Abella",
-      "email": "miquel@miquel.com",
-      "password": "12345",
-      "savedAddress": [
-        {
-          "address": "Álvaro, 1",
-          "zip": "43000",
-          "city": "Toronto",
-          "phone": "666666666"
-        }
-      ],
-      "purchaseHistory": [],
-      "currentOrders": []
-    },
-    {
-      "id": "e067a57d-11a3-8aed-ddff-2110c1c689b0",
+      "id": "f098d9e2-4315-c075-58f3-954d60b0244a",
       "name": "Isaura",
       "surname": "Martí",
       "email": "isaura@isaura.com",
@@ -130,8 +113,53 @@
           "orderDate": "10/3/2023",
           "boxes": [
             {
-              "id": "f4c03d84-03e0-3bde-9840-59d0e1479a5a",
-              "units": 2,
+              "id": "21c60841-e281-bdc8-b4d0-39796247417d",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 1,
+                  "name": "PISTACHIO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "DIAMANT",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "BRILLANT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "HAZELNULT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "CRIOLLO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "COFFEE",
+                  "price": 1.15
+                }
+              ],
+              "total": 6.799999999999999
+            }
+          ],
+          "status": "confirmed"
+        },
+        {
+          "orderDate": "10/3/2023",
+          "boxes": [
+            {
+              "id": "e90044dc-afa5-bcc7-23d2-a7284be82a1f",
+              "units": 1,
               "pcs": 6,
               "counterPcs": 6,
               "chocolates": [
@@ -147,8 +175,8 @@
                 },
                 {
                   "units": 1,
-                  "name": "COFFEE",
-                  "price": 1.15
+                  "name": "CRIOLLO",
+                  "price": 1.2
                 },
                 {
                   "units": 1,
@@ -157,21 +185,21 @@
                 },
                 {
                   "units": 1,
-                  "name": "CRIOLLO",
+                  "name": "SOMMELIER",
                   "price": 1.2
                 },
                 {
                   "units": 1,
-                  "name": "SOMMELIER",
-                  "price": 1.2
+                  "name": "COFFEE",
+                  "price": 1.15
                 }
               ],
-              "total": 6.8500000000000005
+              "total": 6.85
             }
-          ]
+          ],
+          "status": "confirmed"
         }
-      ],
-      "currentOrders": []
+      ]
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
+import { SummaryCard } from "../../SummaryCard/SummaryCard";
 import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
-import { CurrentBoxDetail, SummaryCard } from "../index";
+import { CurrentBoxDetail } from "../index";
 
 import "./CartSection.scss";
 

@@ -6,4 +6,3 @@ export * from "./CartSection/CartSection";
 export * from "./ChocolatesSection/ChocolatesSection";
 export * from "./DescriptionSection/DescriptionSection";
 export * from "./CurrentBoxDetail/CurrentBoxDetail";
-export * from "./SummaryCard/SummaryCard";

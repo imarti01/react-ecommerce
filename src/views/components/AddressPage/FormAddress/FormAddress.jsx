@@ -5,7 +5,7 @@ import { useCartContext } from "../../../../hooks/useCartContext";
 
 export const FormAddress = () => {
   const { chooseAddress } = useCartContext();
-  const { authState } = useAuthContext();
+  const { authState, saveAddressData } = useAuthContext();
   const { user } = authState;
   const navigate = useNavigate();
   const inputRef = useRef();
@@ -39,6 +39,8 @@ export const FormAddress = () => {
           "content-type": "application/json",
         },
       }).catch((error) => console.error(error));
+
+      saveAddressData(formAddress);
     }
 
     chooseAddress(formAddress);

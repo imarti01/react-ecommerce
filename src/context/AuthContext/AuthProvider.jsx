@@ -39,8 +39,31 @@ export const AuthProvider = ({ children }) => {
     dispatch({ type: types.LOGOUT });
   };
 
+  const saveAddressData = (address) => {
+    dispatch({
+      type: types.SAVE_ADDRESS,
+      payload: [...authState.user.savedAddress, address],
+    });
+  };
+
+  const savePurchaseHistory = (purchase) => {
+    dispatch({
+      type: types.SAVE_PURCHASE,
+      payload: [...authState.user.purchaseHistory, purchase],
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ authState, register, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        authState,
+        register,
+        login,
+        logout,
+        saveAddressData,
+        savePurchaseHistory,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
