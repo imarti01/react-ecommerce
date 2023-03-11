@@ -1,5 +1,4 @@
-import { ButtonNextPage } from "../../components/ButtonNextPage/ButtonNextPage";
-import { MessageSuccessful } from "../../components/CompletedOrderPage/MessageSuccessful/MessageSuccessful";
+import { MessageSuccessful, ButtonNextPage } from "../../components";
 
 export const CompletedOrderPage = () => {
   return (

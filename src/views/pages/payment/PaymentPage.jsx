@@ -1,5 +1,4 @@
-import { CompleteOrderNav } from "../../components/CompleteOrderNav/CompleteOrderNav";
-import { PaymentForm } from "../../components/PaymentPage/PaymentForm/PaymentForm";
+import { CompleteOrderNav, PaymentForm } from "../../components";
 
 export const PaymentPage = () => {
   return (

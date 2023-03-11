@@ -1,6 +1,8 @@
-import { HeaderDashboard } from "../../components/DashboardPage/HeaderDashboard/HeaderDashboard";
-import { OrderStatus } from "../../components/DashboardPage/OrderStatus/OrderStatus";
-import { PurchaseHistory } from "../../components/DashboardPage/PurchaseHistory/PurchaseHistory";
+import {
+  HeaderDashboard,
+  OrderStatus,
+  PurchaseHistory,
+} from "../../components";
 
 export const DashboardPage = () => {
   return (
