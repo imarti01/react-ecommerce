@@ -1,5 +1,5 @@
-@import "../../../scss/mixins.scss";
-@import "../../../scss/variables.scss";
+@import "../../../scss/styles/mixins.scss";
+@import "../../../scss/theme/variables.scss";
 
 
 @include scrollbar($light-color, $dark-color);

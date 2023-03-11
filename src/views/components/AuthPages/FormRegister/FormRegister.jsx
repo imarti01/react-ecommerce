@@ -49,7 +49,7 @@ export const FormRegister = () => {
       }).catch((error) => console.error(error));
 
       register(formRegister);
-      navigate("/address");
+      navigate("/store");
     }
   };
 

@@ -29,7 +29,7 @@ export const FormLogin = () => {
       });
     } else {
       login(user[0]);
-      navigate("/address");
+      navigate("/store");
     }
   };
 

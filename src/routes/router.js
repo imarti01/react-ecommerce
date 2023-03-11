@@ -9,6 +9,8 @@ import {
   DashboardPage,
   PaymentPage,
   CompletedOrderPage,
+  ErrorPage,
+  DashboardDetailPage,
 } from "../views/pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
@@ -68,5 +70,17 @@ export const router = createBrowserRouter([
         <DashboardPage />
       </ProtectedRoute>
     ),
+  },
+  {
+    path: "dashboard/:boxId",
+    element: (
+      <ProtectedRoute>
+        <DashboardDetailPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);

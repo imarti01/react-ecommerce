@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import uuid from "react-uuid";
 import { useAuthContext, useFetch } from "../../../../hooks";
 import { useCartContext } from "../../../../hooks/useCartContext";
 
@@ -11,6 +12,7 @@ export const FormAddress = () => {
   const inputRef = useRef();
 
   const [formAddress, setFormAddress] = useState({
+    id: uuid(),
     address: "",
     zip: "",
     city: "",

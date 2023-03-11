@@ -1,14 +1,9 @@
-import {
-  HeaderDashboard,
-  OrderStatus,
-  PurchaseHistory,
-} from "../../components";
+import { HeaderDashboard, PurchaseHistory } from "../../components";
 
 export const DashboardPage = () => {
   return (
     <>
       <HeaderDashboard />
-      <OrderStatus />
       <PurchaseHistory />
     </>
   );

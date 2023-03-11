@@ -1,15 +1,11 @@
 import React from "react";
-import { useAuthContext } from "../../../hooks";
-import { FormAddress, CompleteOrderNav, SavedAddress } from "../../components";
+import { CompleteOrderNav, ContainerAddress } from "../../components";
 
 export const AddressPage = () => {
-  const user = useAuthContext();
-  console.log(user);
   return (
     <div>
       <CompleteOrderNav />
-      <FormAddress />
-      <SavedAddress />
+      <ContainerAddress />
     </div>
   );
 };

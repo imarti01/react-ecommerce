@@ -1,0 +1,29 @@
+@import "../../../../scss/theme/variables.scss";
+
+.saved-address {
+    background-color: $light-color;
+
+    &__saved {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        &--inactive {
+            display: none;
+        }
+    }
+
+    &__new {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &--inactive {
+            display: none;
+        }
+    }
+}
