@@ -13,9 +13,9 @@
     background-color: $dark-color;
     z-index: 1;
     
-    p {
+    &__contact {
         margin: 0rem 1rem;
-        width: 9rem;
+        width: 11rem;
     }
 
     &__gloria{
@@ -25,7 +25,8 @@
     &__right-container {
         margin: 0 1rem;
         display: flex;
-        width: 9rem;
+        justify-content: space-between;
+        width: 11rem;
     }
 
 }
