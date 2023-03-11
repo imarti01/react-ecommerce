@@ -12,7 +12,7 @@
     margin: 2.5rem 2rem;
     color: $dark-color;
     padding: 1rem;
-    box-shadow: 1px 1px 2px #bd9f7b;
+    box-shadow: 1px 1px 2px $green-color;
     border-radius: 100% 20% 0% 0%;
     
     &__img {
@@ -46,11 +46,7 @@
         font-size: 0.8rem;
         cursor: pointer;
         width: 91%;
-        background-image: url("../../../../../assets/imgs/choco6.jpg");
-        background-size: cover;
-        color: #ddc2a7;
-        font-weight: lighter;
-        text-shadow: 1px 1px 10px $light-color;
+        background-color: $green-color;
         border: none;
         border-radius: 0% 50% 0% 50%;
 

@@ -1,4 +1,5 @@
 import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
+import { ButtonNextPage } from "../../ButtonNextPage/ButtonNextPage";
 import { SummaryCard } from "../../SummaryCard/SummaryCard";
 import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
 import { CurrentBoxDetail } from "../index";
@@ -37,6 +38,7 @@ export const CartSection = () => {
               );
             })}
         </div>
+        <ButtonNextPage link={"/address"} className="" textButton="BUY NOW" />
         <img
           className="cart-section__cart--btn"
           src="https://res.cloudinary.com/duokspzx0/image/upload/v1677145511/icons/arrow-up_2_opmi4t.png"

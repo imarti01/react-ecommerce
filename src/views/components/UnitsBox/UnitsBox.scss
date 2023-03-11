@@ -1,0 +1,17 @@
+@import "../../../scss/theme/variables.scss";
+@import "../../../scss/styles/mixins.scss";
+
+.units-box {
+    display: flex;
+
+    &__units {
+        @include inputNumber;
+    }
+    
+    &__total {
+        
+
+    }
+    
+    
+}

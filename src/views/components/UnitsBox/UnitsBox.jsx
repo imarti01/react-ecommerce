@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./UnitsBox.scss";
 
 export const UnitsBox = ({ total, id, units, changeUnitsBoxProvider }) => {
   const [unitsInput, setUnitsInput] = useState(units);
@@ -12,14 +13,17 @@ export const UnitsBox = ({ total, id, units, changeUnitsBoxProvider }) => {
   };
 
   return (
-    <div>
+    <div className="units-box">
       <input
+        className="units-box__units"
         type="number"
         value={unitsInput}
         onChange={handleUnitsBox}
         onBlur={changeUnitsBox}
       />
-      <p>Total: {(unitsInput * total).toFixed(2)} €</p>
+      <p className="units-box__total">
+        Total: {(unitsInput * total).toFixed(2)} €
+      </p>
     </div>
   );
 };

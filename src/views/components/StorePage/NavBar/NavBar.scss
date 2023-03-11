@@ -16,6 +16,7 @@
     &__contact {
         margin: 0rem 1rem;
         width: 11rem;
+        cursor: pointer;
     }
 
     &__gloria{
@@ -27,6 +28,17 @@
         display: flex;
         justify-content: space-between;
         width: 11rem;
+
+       a {
+        text-decoration: none;
+        &:-webkit-any-link {
+            color: $light-color;
+        }
+       }
+
+       p {
+        cursor: pointer;
+       }
     }
 
 }

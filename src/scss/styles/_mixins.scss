@@ -37,3 +37,17 @@
      }
       
 }
+
+@mixin inputNumber () {
+  border: none;
+  font-size: 1rem;
+  width: 1.7rem;
+  background-color: $light-color;
+
+  &:not([step="any"])::-webkit-inner-spin-button,
+  &:not([step="any"])::-webkit-outer-spin-button {
+      opacity: 1;
+      background-color: $light-color;
+    }
+
+}
