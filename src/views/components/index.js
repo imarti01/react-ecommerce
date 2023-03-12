@@ -9,4 +9,4 @@ export * from "./MainPage/MainContainer";
 export * from "./SummaryCard/SummaryCard";
 export * from "./UnitsBox/UnitsBox";
 export * from "./PaymentPage/PaymentForm";
-export * from "./CompletedOrderPage/MessageSuccessful/MessageSuccessful";
+export * from "./CompletedOrderPage/MessageSuccessful";

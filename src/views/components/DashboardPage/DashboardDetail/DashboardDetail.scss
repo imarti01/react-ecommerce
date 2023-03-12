@@ -1,0 +1,50 @@
+@import "../../../../scss/theme/variables.scss";
+@import "../../../../scss/styles/mixins.scss";
+
+.dashboard-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    background-color: $light-color;
+    padding: 3rem;
+    color: $dark-color;
+    
+    &__title {
+        margin-bottom: 2rem;
+        font-size: 3rem;
+        color: $green-color;
+    }
+    
+    &__chocolates {
+        display: flex;
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 9.5rem;
+            height: 9rem;
+            margin: 0.5rem 1rem;
+            padding: 0.5rem;
+
+            img {
+                width: 5rem;
+                filter: drop-shadow(2px 2px 4px $dark-color);
+            }
+
+        }
+    }
+
+    &__price {
+        font-size: 2.5rem;
+        margin: 2rem 0rem 1rem 0rem;
+    }
+
+    &__button {
+        @include buttonBuy($green-color, $dark-color, $green-color);
+        margin: 2rem;
+    }
+}

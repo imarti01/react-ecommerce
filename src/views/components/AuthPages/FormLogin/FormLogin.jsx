@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuthContext, useFetch } from "../../../../hooks";
+import "./FormLogin.scss";
 
 export const FormLogin = () => {
   const { login } = useAuthContext();
@@ -34,8 +35,8 @@ export const FormLogin = () => {
   };
 
   return (
-    <form onSubmit={submitLogin}>
-      <label>
+    <form onSubmit={submitLogin} className="form-login">
+      <label className="form-login__input-label">
         Email:
         <input
           type="email"
@@ -45,7 +46,7 @@ export const FormLogin = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-login__input-label">
         Password:
         <input
           type="password"
@@ -55,7 +56,7 @@ export const FormLogin = () => {
           required
         />
       </label>
-      <button>Submit</button>
+      <button className="form-login__button">Submit</button>
     </form>
   );
 };

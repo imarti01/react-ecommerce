@@ -1,0 +1,31 @@
+@import "../../../../scss/theme/variables.scss";
+@import "../../../../scss/styles/mixins.scss";
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 60%;
+    width: 40%;
+    padding: 2rem;
+    margin: 2rem 0rem;
+    background-color: $light-color;
+    border-radius: 1rem;
+
+    &__input-label {
+        display: flex;
+        flex-direction: column;
+
+        input {
+           @include inputText();
+        }
+    }
+
+    &__button {
+        @include buttonBuy($green-color, $dark-color, $green-color);
+
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+    }
+}

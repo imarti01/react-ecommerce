@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import uuid from "react-uuid";
 import { useAuthContext, useCartContext, useFetch } from "../../../../hooks";
 
+import "./DashboardDetail.scss";
+
 export const DashboardDetail = () => {
   const { authState } = useAuthContext();
   const { user } = authState;
@@ -31,24 +33,28 @@ export const DashboardDetail = () => {
   };
 
   return (
-    <div>
-      <h2>BOX {pcs} PCS</h2>
-      <div>
+    <div className="dashboard-detail">
+      <h2 className="dashboard-detail__title">BOX {pcs} PCS</h2>
+      <div className="dashboard-detail__chocolates">
         {chocolates &&
           chocolates.map(({ units, name }) => {
             const chocData = chocolatesData.find((choc) => choc.name === name);
             return (
               <div key={name}>
+                <img src={chocData && chocData.src} alt="choc" />
                 <h3>
                   {units} /u {name}
                 </h3>
-                <img src={chocData && chocData.src} alt="choc" />
               </div>
             );
           })}
       </div>
-      <h3>Price: {total && total.toFixed(2)}€</h3>
-      <button onClick={addBoxCart}>Add to Cart</button>
+      <h3 className="dashboard-detail__price">
+        Price: {total && total.toFixed(2)}€
+      </h3>
+      <button className="dashboard-detail__button" onClick={addBoxCart}>
+        Add to Cart
+      </button>
     </div>
   );
 };

@@ -30,7 +30,9 @@ export const ContainerBoxesDetail = () => {
             />
           ))}
         </div>
-        <h2>TOTAL ORDER: {totalOrder.toFixed(2)} €</h2>
+        <h2>
+          <span>TOTAL ORDER:</span> {totalOrder.toFixed(2)} €
+        </h2>
       </div>
       <ButtonNextPage
         link="/payment"

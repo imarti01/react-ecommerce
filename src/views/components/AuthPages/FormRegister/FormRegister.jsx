@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useAuthContext } from "../../../../hooks";
 import { useFetch } from "../../../../hooks/useFetch";
 import uuid from "react-uuid";
+import "./FormRegister.scss";
 
 export const FormRegister = () => {
   const { register } = useAuthContext();
@@ -54,8 +55,8 @@ export const FormRegister = () => {
   };
 
   return (
-    <form onSubmit={submitRegister}>
-      <label>
+    <form onSubmit={submitRegister} className="form-register">
+      <label className="form-register__input-label">
         Name:
         <input
           type="text"
@@ -65,7 +66,7 @@ export const FormRegister = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-register__input-label">
         Surname:
         <input
           type="text"
@@ -75,7 +76,7 @@ export const FormRegister = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-register__input-label">
         Email:
         <input
           type="email"
@@ -85,7 +86,7 @@ export const FormRegister = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-register__input-label">
         Password:
         <input
           type="password"
@@ -95,7 +96,7 @@ export const FormRegister = () => {
           required
         />
       </label>
-      <button>Submit</button>
+      <button className="form-register__button">Submit</button>
     </form>
   );
 };

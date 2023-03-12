@@ -1,0 +1,14 @@
+@import "../../../../scss/theme/variables.scss";
+
+.redirect-to {
+    color: $light-color;
+
+    a {
+        text-decoration: none;
+
+        &:-webkit-any-link {
+            color: $green-color;
+        }
+
+    }
+}

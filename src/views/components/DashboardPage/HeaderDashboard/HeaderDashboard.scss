@@ -1,0 +1,26 @@
+@import "../../../../scss/theme/variables.scss";
+
+.header-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: $dark-color;
+    color: $light-color;
+    height:23vh;
+    width: 100vw;
+
+    h4 {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            color: $green-color;
+        }
+    }
+
+    h2 {
+        font-size: 2.7rem;
+    }
+}
