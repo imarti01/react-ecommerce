@@ -49,12 +49,11 @@
         width: 100%;
 
         &--btn-discard {
-            @include buttonBuy($dark-color, $dark-color, $dark-color);
+            @include buttonBuy($dark-color, $green-color, $dark-color);
         
             font-size: 1rem;
             padding: 0.2rem 0.7rem;
             margin-right: 0.5rem;
-            color: $green-color;
         }
 
 

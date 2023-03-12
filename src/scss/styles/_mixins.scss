@@ -5,10 +5,11 @@
     border-radius: 2rem;
     border: 1px double $bg-color;  
     cursor: pointer;  
+    color: $font-color;
     
     a {
         text-decoration: none;
-        
+
         &:-webkit-any-link {
             color: $font-color;
         }
@@ -17,8 +18,13 @@
     
     &:hover {
         background-color: $bg-hover;
-        border: 1px solid $font-color;  
-        box-shadow: 1px 1px 3px $font-color;
+        border: 1px solid $dark-color;  
+        box-shadow: 1px 1px 3px $dark-color;
+    }
+
+    &:disabled {
+      color: rgba(40, 37, 37, 0.667);
+      border-color: rgba(40, 37, 37, 0.667);
     }
 
 }

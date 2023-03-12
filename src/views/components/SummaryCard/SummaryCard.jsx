@@ -23,22 +23,29 @@ export const SummaryCard = ({ id, units, pcs, total, chocolates }) => {
     });
   };
   return (
-    <div>
-      <h3>BOX {pcs} PCS</h3>
-      <p>
+    <div className="summary-card">
+      <h3 className="summary-card__title">BOX {pcs} PCS</h3>
+      <p className="summary-card__summary">
         {chocolates &&
           chocolates.map((chocolate, idx) => {
             const unitsName = chocolate.units + " " + chocolate.name;
             return idx === 0 ? unitsName : ", " + unitsName;
           })}
       </p>
-      <UnitsBox
-        changeUnitsBoxProvider={changeUnitsBoxOnCart}
-        id={id}
-        units={units}
-        total={total}
-      />
-      <button onClick={deleteBox}>Delete</button>
+      <div className="summary-card__units-delete">
+        <UnitsBox
+          changeUnitsBoxProvider={changeUnitsBoxOnCart}
+          id={id}
+          units={units}
+          total={total}
+        />
+        <button
+          className="summary-card__units-delete--btn-delete"
+          onClick={deleteBox}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 };

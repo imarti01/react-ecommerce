@@ -1,4 +1,5 @@
 @import "../../../../scss/theme/variables.scss";
+@import "../../../../scss//styles//mixins.scss";
 
 .cart-section {
     position: fixed;
@@ -37,14 +38,21 @@
         }
 
         &--empty {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 35vw;
-            height: 92vh;
+            color: $green-color;
+            margin: 2rem 2rem;
         }
 
-        &--btn {
+        &--btn-buy {
+            @include buttonBuy($green-color, $dark-color, $green-color);
+            
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            padding: 0.3rem 1rem;
+        }
+
+        &--btn-close {
             width: 2rem;
             margin: 0.3rem 1rem;
             cursor: pointer;

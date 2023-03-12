@@ -1,1 +1,28 @@
 @import "../../../scss/theme/variables.scss";
+@import "../../../scss/styles/mixins.scss";
+
+.summary-card {
+   margin-top: 1rem;
+
+   &__title {
+    margin-bottom: 0.2rem;
+   }
+
+   &__summary {
+    margin-bottom: 0.3rem;
+   }
+
+   &__units-delete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--btn-delete {
+        @include buttonBuy($light-color, $green-color, $dark-color);
+        border-color: $green-color;
+        
+        font-size: 0.9rem;
+        padding: 0.1rem 0.5rem;
+    }
+   }
+}

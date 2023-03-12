@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
 import { ButtonNextPage } from "../../ButtonNextPage/ButtonNextPage";
 import { SummaryCard } from "../../SummaryCard/SummaryCard";
@@ -11,6 +12,12 @@ export const CartSection = () => {
   const { cart } = cartState;
   const { currentBox } = useCurrentBoxContext();
   const { pcs } = currentBox;
+
+  const navigate = useNavigate();
+
+  const submitBuyCart = () => {
+    navigate("/address");
+  };
 
   return (
     <div className="cart-section">
@@ -38,14 +45,15 @@ export const CartSection = () => {
               );
             })}
         </div>
-        <ButtonNextPage
+        <button
           disabled={cart.length < 1}
-          link={"/address"}
-          className=""
-          textButton="BUY NOW"
-        />
+          className="cart-section__cart--btn-buy"
+          onClick={submitBuyCart}
+        >
+          BUY NOW
+        </button>
         <img
-          className="cart-section__cart--btn"
+          className="cart-section__cart--btn-close"
           src="https://res.cloudinary.com/duokspzx0/image/upload/v1677145511/icons/arrow-up_2_opmi4t.png"
           alt="arrow-up"
           onClick={closeCart}
