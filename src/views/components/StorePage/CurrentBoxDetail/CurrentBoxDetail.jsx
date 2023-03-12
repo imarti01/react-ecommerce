@@ -40,14 +40,16 @@ export const CurrentBoxDetail = () => {
 
   return (
     <div className="box-card">
-      <div className="box-car__summary">
-        <h6>{pcs - counterPcs} chocolates are missing to fill the box</h6>
+      <div className="box-card__summary">
+        <h6 className="box-card__summary--missing">
+          {pcs - counterPcs} chocolates are missing to fill the box
+        </h6>
         <h3 className="box-card__summary--title">BOX {pcs} PCS</h3>
         {chocolates.map((chocolate) => {
           return (
             <div className="box-card__summary--list" key={chocolate.name}>
-              <p className="box-card__summary--list--name">{chocolate.name}</p>
-              <div className="box-card__summary--list--units-price">
+              <p>{chocolate.name}</p>
+              <div className="box-card__summary--list__units-price">
                 <p>
                   <span
                     onClick={() =>
@@ -79,8 +81,12 @@ export const CurrentBoxDetail = () => {
           changeUnitsBoxProvider={changeUnitsBoxOnCurrent}
         />
         <div>
-          <button>Discard</button>
-          <button disabled={pcs !== counterPcs} onClick={addToCart}>
+          <button className="box-card__buy--btn-discard">Discard</button>
+          <button
+            className="box-card__buy--btn-add"
+            disabled={pcs !== counterPcs}
+            onClick={addToCart}
+          >
             Add to Cart
           </button>
         </div>

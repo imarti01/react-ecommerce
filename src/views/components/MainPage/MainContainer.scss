@@ -22,7 +22,7 @@
     }
 
     &__button {
-        @include buttonBuy(transparent);
+        @include buttonBuy(transparent, $dark-color, $green-color);
     }
 
 

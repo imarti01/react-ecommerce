@@ -9,6 +9,8 @@ export const cartReducer = (state, action) => {
       return { ...state, isCartOpen: false };
     case types.ADD_CART:
       return { ...state, cart: [...state.cart, payload] };
+    case types.DELETE_CART:
+      return { ...state, cart: payload };
     case types.CHANGE_UNITS:
       return { ...state, cart: payload };
     case types.CHOOSE_ADDRESS:

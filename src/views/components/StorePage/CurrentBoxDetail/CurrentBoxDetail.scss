@@ -1,4 +1,5 @@
 @import "../../../../scss/theme/variables.scss";
+@import "../../../../scss/styles/mixins.scss";
 
 .box-card {
     position: relative;
@@ -12,6 +13,15 @@
     padding: 0.5rem;
 
     &__summary {
+
+        &--missing {
+            position: absolute;
+            top: 0.2rem;
+            right: 0.3rem;
+            font-size: 0.7rem;
+            font-style: italic;
+        }
+
         &--title {
             margin-bottom: 0.2rem;
             padding: 0.1rem 0.3rem;
@@ -24,15 +34,10 @@
             width: 28vw;
             padding: 0.1rem 0rem 0.1rem 0.5rem;
 
-            &--name {
-
-            }
-
-            &--units-price {
+            &__units-price {
                 display: flex;
-                span {
-                    padding: 0rem 0.1rem;
-                }
+                justify-content: space-between;
+                width: 6rem;
             }
         }
     }
@@ -42,5 +47,32 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+
+        &--btn-discard {
+            @include buttonBuy($dark-color, $dark-color, $dark-color);
+        
+            font-size: 1rem;
+            padding: 0.2rem 0.7rem;
+            margin-right: 0.5rem;
+            color: $green-color;
+        }
+
+
+        &--btn-add {
+            @include buttonBuy($green-color, $dark-color, $green-color);
+        
+            font-size: 1rem;
+            padding: 0.2rem 0.7rem;
+    
+            &:disabled {
+                background-color: $light-color;
+                border-color: $dark-color;
+                cursor: auto;
+
+                &:hover {
+                    box-shadow: none;
+                }
+            }
+        }
     }
 }

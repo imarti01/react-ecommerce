@@ -25,6 +25,11 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: types.ADD_CART, payload: box });
   };
 
+  const deleteBoxToCart = (boxId) => {
+    const newArrCart = cart.filter((box) => box.id !== boxId);
+    dispatch({ type: types.DELETE_CART, payload: newArrCart });
+  };
+
   const changeUnitsBoxOnCart = (idBox, newUnits) => {
     const newArrCart = cart.map((box) => {
       return box.id === idBox ? { ...box, units: parseInt(newUnits) } : box;
@@ -45,6 +50,7 @@ export const CartProvider = ({ children }) => {
         addBoxToCart,
         changeUnitsBoxOnCart,
         chooseAddress,
+        deleteBoxToCart,
       }}
     >
       {children}

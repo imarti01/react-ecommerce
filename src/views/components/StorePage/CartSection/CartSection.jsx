@@ -38,7 +38,12 @@ export const CartSection = () => {
               );
             })}
         </div>
-        <ButtonNextPage link={"/address"} className="" textButton="BUY NOW" />
+        <ButtonNextPage
+          disabled={cart.length < 1}
+          link={"/address"}
+          className=""
+          textButton="BUY NOW"
+        />
         <img
           className="cart-section__cart--btn"
           src="https://res.cloudinary.com/duokspzx0/image/upload/v1677145511/icons/arrow-up_2_opmi4t.png"

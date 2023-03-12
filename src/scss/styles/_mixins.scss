@@ -1,23 +1,24 @@
-@mixin buttonBuy ($color) {
-    background-color: $color;
+@mixin buttonBuy ($bg-color, $font-color, $bg-hover) {
+    background-color: $bg-color;
     font-size: 2rem;
     padding: 0.7rem 1.4rem;
     border-radius: 2rem;
-    border: 1px double $light-color;  
+    border: 1px double $bg-color;  
     cursor: pointer;  
     
     a {
         text-decoration: none;
+        
         &:-webkit-any-link {
-            color: $dark-color;
+            color: $font-color;
         }
+
     }
     
     &:hover {
-        
-        border: 1px solid $dark-color;  
-       
-
+        background-color: $bg-hover;
+        border: 1px solid $font-color;  
+        box-shadow: 1px 1px 3px $font-color;
     }
 
 }
@@ -41,13 +42,14 @@
 @mixin inputNumber () {
   border: none;
   font-size: 1rem;
-  width: 1.7rem;
+  width: 1.9rem;
   background-color: $light-color;
+  margin-right:0.5rem;
+  outline: none;
 
   &:not([step="any"])::-webkit-inner-spin-button,
   &:not([step="any"])::-webkit-outer-spin-button {
-      opacity: 1;
-      background-color: $light-color;
+      opacity: 1;      
     }
 
 }

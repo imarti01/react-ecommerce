@@ -20,6 +20,7 @@ export const UnitsBox = ({ total, id, units, changeUnitsBoxProvider }) => {
         value={unitsInput}
         onChange={handleUnitsBox}
         onBlur={changeUnitsBox}
+        min="1"
       />
       <p className="units-box__total">
         Total: {(unitsInput * total).toFixed(2)} €
