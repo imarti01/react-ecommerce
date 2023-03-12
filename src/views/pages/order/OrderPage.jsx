@@ -3,7 +3,7 @@ import { CompleteOrderNav, ContainerBoxesDetail } from "../../components";
 export const OrderPage = () => {
   return (
     <div>
-      <CompleteOrderNav />
+      <CompleteOrderNav activeClass="confirm" />
       <ContainerBoxesDetail />
     </div>
   );

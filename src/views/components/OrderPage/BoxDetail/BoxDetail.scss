@@ -1,0 +1,39 @@
+@import "../../../../scss/theme/variables.scss";
+
+.box-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $light-color;
+    width: 15rem;
+    padding: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 2rem;
+    color: $dark-color;
+
+    h2 {
+        margin-bottom: 0.2rem;
+    }
+
+    ul {
+        list-style: none;   
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.1rem 0rem;
+
+            span {
+            margin: 0rem 0.2rem;
+            }
+        }
+    }
+
+    &__total-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-top: 0.5rem;
+    }
+}
+

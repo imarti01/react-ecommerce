@@ -1,11 +1,37 @@
-import React from "react";
+import "./CompleteOrderNav.scss";
 
-export const CompleteOrderNav = () => {
+export const CompleteOrderNav = ({ activeClass }) => {
   return (
-    <div>
-      <h3>ADDRESS</h3>
-      <h3>CONFIRM ORDER</h3>
-      <h3>PAYMENT</h3>
+    <div className="complete-order-nav">
+      <h3
+        className={
+          activeClass === "address" ? "complete-order-nav__address" : ""
+        }
+      >
+        ADDRESS
+      </h3>
+      <img
+        src="https://res.cloudinary.com/duokspzx0/image/upload/v1678624918/icons/next_1_hsicrc.png"
+        alt="/"
+      />
+      <h3
+        className={
+          activeClass === "confirm" ? "complete-order-nav__confirm" : ""
+        }
+      >
+        CONFIRM ORDER
+      </h3>
+      <img
+        src="https://res.cloudinary.com/duokspzx0/image/upload/v1678624918/icons/next_1_hsicrc.png"
+        alt="/"
+      />
+      <h3
+        className={
+          activeClass === "payment" ? "complete-order-nav__payment" : ""
+        }
+      >
+        PAYMENT
+      </h3>
     </div>
   );
 };

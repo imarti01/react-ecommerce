@@ -2,10 +2,9 @@ import { useReducer } from "react";
 import { currentBoxReducer } from "../../reducers/currentBoxReducer";
 import { types } from "../../reducers/types/types";
 import { CurrentBoxContext } from "./CurrentBoxContext";
-import uuid from "react-uuid";
 
 const initialState = {
-  id: uuid(),
+  id: "",
   units: 1,
   pcs: 0,
   counterPcs: 0,
@@ -17,8 +16,8 @@ export const CurrentBoxProvider = ({ children }) => {
   const [currentBox, dispatch] = useReducer(currentBoxReducer, initialState);
   const { chocolates } = currentBox;
 
-  const chooseSize = (pcs) => {
-    dispatch({ type: types.CHOOSE_SIZE, payload: pcs });
+  const chooseSize = (pcs, id) => {
+    dispatch({ type: types.CHOOSE_SIZE, payload: { pcs, id } });
   };
 
   const addChocolate = (name, price) => {

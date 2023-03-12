@@ -3,8 +3,8 @@ import { CompleteOrderNav, ContainerAddress } from "../../components";
 
 export const AddressPage = () => {
   return (
-    <div>
-      <CompleteOrderNav />
+    <div className="address-page">
+      <CompleteOrderNav activeClass="address" />
       <ContainerAddress />
     </div>
   );

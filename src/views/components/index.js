@@ -8,5 +8,5 @@ export * from "./CompleteOrderNav/CompleteOrderNav";
 export * from "./MainPage/MainContainer";
 export * from "./SummaryCard/SummaryCard";
 export * from "./UnitsBox/UnitsBox";
-export * from "./PaymentPage/PaymentForm/PaymentForm";
+export * from "./PaymentPage/PaymentForm";
 export * from "./CompletedOrderPage/MessageSuccessful/MessageSuccessful";

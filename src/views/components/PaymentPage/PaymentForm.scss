@@ -1,0 +1,51 @@
+@import "../../../scss/theme/variables.scss";
+@import "../../../scss/styles/mixins.scss";
+
+.payment-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 92vh;
+    background-color: $dark-color;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 77%;
+        width: 40%;
+        padding: 2rem;
+        background-color: $light-color;
+        border-radius: 1rem;
+
+        &--input-label {
+            display: flex;
+        flex-direction: column;
+
+        input {
+           @include inputText();
+        }
+        }
+        div {
+            position: relative;
+                p {
+                    position: absolute;
+                    bottom: -1;
+                    right: 0;
+                    margin-top: 0.2rem;
+                    font-size: 0.7rem;
+                }
+        }
+
+        &--button {
+            @include buttonBuy($green-color, $dark-color, $green-color);
+
+            font-size: 1.3rem;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+        }
+        
+    }
+}

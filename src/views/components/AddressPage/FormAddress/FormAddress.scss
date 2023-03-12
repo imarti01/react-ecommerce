@@ -1,0 +1,40 @@
+@import "../../../../scss/theme/variables.scss";
+@import "../../../../scss/styles/mixins.scss";
+
+.form-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 75%;
+    width: 40%;
+    padding: 2rem;
+    background-color: $light-color;
+    border-radius: 1rem;
+
+    &__input-label {
+        display: flex;
+        flex-direction: column;
+
+        input {
+           @include inputText();
+        }
+    }
+
+    &__checkbox-label {
+        display: flex;
+        flex-direction: row;
+
+        input {
+            @include inputCheckbox();
+            margin-right: 0.5rem
+        }
+    }
+
+    &__button {
+        @include buttonBuy($green-color, $dark-color, $green-color);
+
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+    }
+}

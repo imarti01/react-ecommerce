@@ -25,8 +25,10 @@ export const SavedAddress = ({ savedAddress }) => {
     setIsNewAddressOpen(false);
   };
   const chooseAddresSaved = () => {
-    chooseAddress(address);
-    navigate("/order");
+    if (address.address) {
+      chooseAddress(address);
+      navigate("/order");
+    }
   };
 
   return (
@@ -38,21 +40,36 @@ export const SavedAddress = ({ savedAddress }) => {
             : "saved-address__saved--inactive"
         }
       >
-        <button onClick={addNewAddress}>New Address</button>
-        <h3>Saved Address:</h3>
-        {savedAddress.map(({ address, zip, city, phone, id }) => (
-          <div key={id}>
-            <input
-              type="radio"
-              name="address"
-              onChange={(e) => handleAddress(e, id)}
-            />
-            <p>
-              {address} {zip} {city} (Phone: {phone})
-            </p>
-          </div>
-        ))}
-        <button onClick={chooseAddresSaved}>CONTINUE</button>
+        <div className="saved-address__saved--choose">
+          <h3>Saved Address:</h3>
+          {savedAddress.map(({ address, zip, city, phone, id }) => (
+            <div
+              className="saved-address__saved--choose--each-container"
+              key={id}
+            >
+              <input
+                type="radio"
+                name="address"
+                onChange={(e) => handleAddress(e, id)}
+              />
+              <p>
+                {address} {zip} {city} (Phone: {phone})
+              </p>
+            </div>
+          ))}
+        </div>
+        <button
+          className="saved-address__saved--btn-new"
+          onClick={addNewAddress}
+        >
+          New Address
+        </button>
+        <button
+          className="saved-address__saved--btn-continue"
+          onClick={chooseAddresSaved}
+        >
+          CONTINUE
+        </button>
       </div>
       <div
         className={
@@ -61,8 +78,9 @@ export const SavedAddress = ({ savedAddress }) => {
             : "saved-address__new--inactive"
         }
       >
-        <button onClick={addSavedAddress}>Saved Address</button>
-        <h2>New Address</h2>
+        <button className="saved-address__new--saved" onClick={addSavedAddress}>
+          Saved Address
+        </button>
         <FormAddress />
       </div>
     </div>

@@ -4,15 +4,18 @@ import {
   useCurrentBoxContext,
   useFetch,
 } from "../../../../hooks";
+import uuid from "react-uuid";
 
 export const BoxesSection = ({ refProps }) => {
   const { openCart } = useCartContext();
   const { chooseSize } = useCurrentBoxContext();
 
+  const newId = uuid();
+
   const sizeBoxes = useFetch("http://localhost:3004/sizeBoxes");
 
   const chooseSizeBox = (pcs) => {
-    chooseSize(pcs);
+    chooseSize(pcs, newId);
     openCart();
   };
 

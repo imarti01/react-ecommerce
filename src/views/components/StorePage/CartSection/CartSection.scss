@@ -50,6 +50,14 @@
             right: 1.5rem;
             font-size: 1.5rem;
             padding: 0.3rem 1rem;
+
+            &:disabled {
+                background-color: $light-color;
+
+                &:hover {
+                    box-shadow: none;
+                }
+            }
         }
 
         &--btn-close {

@@ -156,6 +156,177 @@
           "status": "confirmed"
         }
       ]
+    },
+    {
+      "id": "e38955d3-9a4b-a74d-be7c-f3cc0575b4de",
+      "name": "isaura2",
+      "surname": "isaura22",
+      "email": "isaura2@isaura.com",
+      "password": "12345",
+      "savedAddress": [
+        {
+          "id": "671e2330-121e-24c1-9083-ad6554151447",
+          "address": "Álvaro, 1",
+          "zip": "43000",
+          "city": "Toronto",
+          "phone": "666666666"
+        }
+      ],
+      "purchaseHistory": [
+        {
+          "orderDate": "12/3/2023",
+          "boxes": [
+            {
+              "id": "a9ab990e-59d1-b356-27c3-585154376142",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 4,
+                  "name": "HAZELNULT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "CRIOLLO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "COFFEE",
+                  "price": 1.15
+                }
+              ],
+              "total": 6.55
+            }
+          ],
+          "status": "confirmed"
+        },
+        {
+          "orderDate": "12/3/2023",
+          "boxes": [
+            {
+              "id": "a9ab990e-59d1-b356-27c3-585154376142",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 4,
+                  "name": "HAZELNULT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "CRIOLLO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "COFFEE",
+                  "price": 1.15
+                }
+              ],
+              "total": 6.55
+            },
+            {
+              "id": "3e5b1f91-0c79-0e07-a46f-baf294a326e7",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 4,
+                  "name": "HAZELNULT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "CRIOLLO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "COFFEE",
+                  "price": 1.15
+                }
+              ],
+              "total": 6.55
+            }
+          ],
+          "status": "confirmed"
+        },
+        {
+          "orderDate": "12/3/2023",
+          "boxes": [
+            {
+              "id": "7f0d6d50-553e-758d-a8d1-98c65bd4a59e",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 1,
+                  "name": "BRILLANT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "PISTACHIO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "DIAMANT",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "PRALINÉ",
+                  "price": 1.1
+                },
+                {
+                  "units": 1,
+                  "name": "GALERIE",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "SOMMELIER",
+                  "price": 1.2
+                }
+              ],
+              "total": 6.8500000000000005
+            },
+            {
+              "id": "e54c10d8-9959-3dec-2e0c-42d93db15bcb",
+              "units": 2,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 2,
+                  "name": "PRALINÉ",
+                  "price": 1.1
+                },
+                {
+                  "units": 2,
+                  "name": "GALERIE",
+                  "price": 1.15
+                },
+                {
+                  "units": 2,
+                  "name": "SOMMELIER",
+                  "price": 1.2
+                }
+              ],
+              "total": 6.900000000000001
+            }
+          ],
+          "status": "confirmed"
+        }
+      ]
     }
   ]
 }

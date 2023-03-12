@@ -1,3 +1,5 @@
+@import "./animations.scss";
+
 @mixin buttonBuy ($bg-color, $font-color, $bg-hover) {
     background-color: $bg-color;
     font-size: 2rem;
@@ -58,4 +60,47 @@
       opacity: 1;      
     }
 
+}
+
+@mixin inputText () {
+  width: 18rem;
+  margin-top: 0.2rem;
+  background-color: $light-color;
+  border: none;
+  border-bottom: 1px solid $green-color;
+  outline: none;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover, 
+  &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0px 1000px $light-color inset;
+  }
+}
+
+@mixin inputCheckbox () {
+  display: flex;
+  appearance: none;
+  background: $light-color;
+  border: 1px solid $dark-color;
+  height: 1.2rem;
+  width: 1.2rem;    
+  border-radius: 3px;   
+  cursor: pointer; 
+
+  &::after {
+    content: '✔';
+    margin: auto;
+  }
+
+  &:not(:checked)::after {
+    color: transparent;
+    text-shadow: 0 0 0 transparent;
+    @include transitionCheckBox();
+  }
+
+  &:checked::after {
+    color: $green-color;
+    text-shadow: 2px 3px 2px fade(black, 20);
+    @include transitionCheckBox();
+  }
 }

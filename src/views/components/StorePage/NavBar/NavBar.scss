@@ -39,6 +39,10 @@
        p {
         cursor: pointer;
        }
+
+       &--cart {
+        color: $green-color;
+       }
     }
 
 }

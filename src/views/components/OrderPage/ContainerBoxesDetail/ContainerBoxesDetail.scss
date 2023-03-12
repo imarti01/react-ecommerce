@@ -1,0 +1,36 @@
+@import "../../../../scss/styles/mixins.scss";
+@import "../../../../scss/theme/variables.scss";
+
+.container-boxes-detail {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $dark-color;
+    width: 100vw;
+    height: 92vh;
+    padding: 2rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+
+        &--boxes {
+            display: flex;
+            width: 100%;
+            padding: 3rem;
+        }
+    }
+
+    &__continue {
+        @include buttonBuy ($green-color, $dark-color, $green-color);
+
+        font-size: 1.5rem;
+    }
+}

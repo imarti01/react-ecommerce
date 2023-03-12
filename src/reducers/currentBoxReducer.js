@@ -6,7 +6,8 @@ export const currentBoxReducer = (state, action) => {
     case types.CHOOSE_SIZE:
       return {
         ...state,
-        pcs: payload,
+        pcs: payload.pcs,
+        id: payload.id,
       };
     case types.ADD_NEW_CHOC:
       return {

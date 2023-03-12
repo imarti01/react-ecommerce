@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";
-import { useAuthContext, useFetch } from "../../../../hooks";
+import { useAuthContext } from "../../../../hooks";
 import { useCartContext } from "../../../../hooks/useCartContext";
+
+import "./FormAddress.scss";
 
 export const FormAddress = () => {
   const { chooseAddress } = useCartContext();
@@ -50,8 +52,8 @@ export const FormAddress = () => {
   };
 
   return (
-    <form onSubmit={submitFormAddress}>
-      <label>
+    <form className="form-address" onSubmit={submitFormAddress}>
+      <label className="form-address__input-label">
         Address:
         <input
           type="text"
@@ -61,7 +63,7 @@ export const FormAddress = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-address__input-label">
         Zip Code:
         <input
           type="text"
@@ -73,7 +75,7 @@ export const FormAddress = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-address__input-label">
         City:
         <input
           type="text"
@@ -83,7 +85,7 @@ export const FormAddress = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-address__input-label">
         Phone:
         <input
           type="tel"
@@ -96,11 +98,11 @@ export const FormAddress = () => {
           required
         />
       </label>
-      <label>
+      <label className="form-address__checkbox-label">
         <input type="checkbox" ref={inputRef} />
         Save this address for future purchases
       </label>
-      <button>CONTINUE</button>
+      <button className="form-address__button">CONTINUE</button>
     </form>
   );
 };

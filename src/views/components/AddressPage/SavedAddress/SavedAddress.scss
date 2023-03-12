@@ -1,18 +1,60 @@
 @import "../../../../scss/theme/variables.scss";
+@import "../../../../scss/styles/mixins.scss";
 
 .saved-address {
-    background-color: $light-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $dark-color;
+    width: 100%;
+    height: 100%;
 
     &__saved {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
+        justify-content: space-between;
+        width: 70%;
+        height: 80%;
 
         &--inactive {
             display: none;
+        }
+
+        &--choose {
+
+           h3 {
+            color: $green-color
+           }
+
+           &--each-container {
+            display: flex;
+            background-color: $light-color;
+            margin: 0.7rem;
+            width: 50vw;
+            padding: 1rem;
+            border-radius: 2rem;
+
+            input {
+                margin-right: 0.5rem
+            }
+           }
+        }
+
+        &--btn-new {
+            @include buttonBuy($dark-color, $green-color, $light-color);
+
+            font-size: 1rem;
+            padding: 0.3rem 0.7rem;
+            border-color: $light-color;
+            
+        }
+
+        &--btn-continue {
+            @include buttonBuy($green-color, $dark-color, $light-color);
+
+            font-size: 1.5rem;
         }
     }
 
@@ -20,10 +62,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        height: 100%;
+        width: 100%;
 
         &--inactive {
             display: none;
+        }
+
+        &--saved {
+            @include buttonBuy($dark-color, $green-color, $light-color);
+
+            font-size: 1rem;
+            padding: 0.3rem 0.7rem;
+            border-color: $light-color;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
         }
     }
 }

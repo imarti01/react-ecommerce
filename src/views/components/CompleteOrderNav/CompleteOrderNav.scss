@@ -1,0 +1,28 @@
+@import "../../../scss/theme/variables.scss";
+
+.complete-order-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 8vh;
+    background-color: $dark-color;
+    color: $light-color;
+
+    img {
+        height: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    &__address {
+        color: $green-color;
+    }
+
+    &__confirm{
+        color: $green-color;
+    }
+
+    &__payment {
+        color: $green-color;
+    }
+}

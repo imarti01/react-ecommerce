@@ -11,18 +11,20 @@ export const MessageSuccessful = () => {
       <h2>Your purchase has been successful!</h2>
       <h3>You can check the status of your order on your profile page</h3>
       <div>
-        <h4>Purchase summary:</h4>
+        <h4>Order summary:</h4>
         {cart.length > 0 &&
           cart.map(({ id, units, pcs, chocolates, total }, idx) => {
             return (
-              <SummaryCard
-                id={id}
-                units={units}
-                pcs={pcs}
-                chocolates={chocolates}
-                total={total}
-                key={"box" + (idx + 1)}
-              />
+              <div>
+                <h3 className="summary-card__title">BOX {pcs} PCS</h3>
+                <p className="summary-card__summary">
+                  {chocolates &&
+                    chocolates.map((chocolate, idx) => {
+                      const unitsName = chocolate.units + " " + chocolate.name;
+                      return idx === 0 ? unitsName : ", " + unitsName;
+                    })}
+                </p>
+              </div>
             );
           })}
         <h4>Shipping Address:</h4>

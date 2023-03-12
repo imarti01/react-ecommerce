@@ -21,7 +21,7 @@ export const NavBar = () => {
           </Link>
         )}
 
-        <TotalBoxesNav />
+        <TotalBoxesNav className="navbar__right-container--cart" />
       </div>
     </nav>
   );
