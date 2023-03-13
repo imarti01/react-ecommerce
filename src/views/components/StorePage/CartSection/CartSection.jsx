@@ -5,6 +5,7 @@ import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
 import { CurrentBoxDetail } from "../index";
 
 import "./CartSection.scss";
+import "animate.css";
 
 export const CartSection = () => {
   const { cartState, closeCart } = useCartContext();
@@ -22,7 +23,7 @@ export const CartSection = () => {
   return (
     <div className="cart-section">
       <div className="cart-section__background" onClick={closeCart}></div>
-      <div className="cart-section__cart">
+      <div className="cart-section__cart animate__animated animate__fadeInDown">
         <TotalBoxesNav className="cart-section__cart--nav" />
         <div>
           {!cart.length && currentBox.pcs === 0 && (
