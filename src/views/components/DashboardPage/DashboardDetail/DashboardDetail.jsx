@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import uuid from "react-uuid";
 import { useAuthContext, useCartContext, useFetch } from "../../../../hooks";
@@ -48,7 +49,17 @@ export const DashboardDetail = () => {
             const chocData = chocolatesData.find((choc) => choc.name === name);
             return (
               <div key={name}>
-                <img src={chocData && chocData.src} alt="choc" />
+                {chocData ? (
+                  <img src={chocData.src} alt="choc" />
+                ) : (
+                  <RotatingLines
+                    strokeColor="grey"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    width="20"
+                    visible={true}
+                  />
+                )}
                 <h3>
                   {units} /u {name}
                 </h3>

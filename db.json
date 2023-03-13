@@ -100,7 +100,22 @@
       "surname": "Martí",
       "email": "isaura@isaura.com",
       "password": "12345",
-      "savedAddress": [],
+      "savedAddress": [
+        {
+          "id": "e590eee1-1d7d-1d10-202d-cccd8cc6588c",
+          "address": "Jose, 1",
+          "zip": "43000",
+          "city": "Toronto",
+          "phone": "666666666"
+        },
+        {
+          "id": "70dddc7e-e4e2-69ca-0b03-0d743c2c1336",
+          "address": "Álvaro, 1",
+          "zip": "43000",
+          "city": "Toronto",
+          "phone": "666666666"
+        }
+      ],
       "purchaseHistory": [
         {
           "orderDate": "13/3/2023",
@@ -267,6 +282,135 @@
                 }
               ],
               "total": 6.85
+            }
+          ],
+          "status": "confirmed"
+        },
+        {
+          "orderDate": "13/3/2023",
+          "boxes": [
+            {
+              "id": "1308f922-01c6-cdeb-9881-c747474300cd",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 1,
+                  "name": "BRILLANT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "PISTACHIO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "DIAMANT",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "CRIOLLO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "COFFEE",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "DIVINE",
+                  "price": 1.2
+                }
+              ],
+              "total": 6.95
+            },
+            {
+              "id": "a299cef4-59bf-bd50-d151-14f66ea01eee",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 1,
+                  "name": "BRILLANT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "PRESTIGE",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "PISTACHIO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "DIAMANT",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "GALERIE",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "PRALINÉ",
+                  "price": 1.1
+                }
+              ],
+              "total": 6.699999999999999
+            }
+          ],
+          "status": "confirmed"
+        },
+        {
+          "orderDate": "13/3/2023",
+          "boxes": [
+            {
+              "id": "b3c40baf-ec51-ef10-d776-119a9ee79334",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 1,
+                  "name": "BRILLANT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "PISTACHIO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "PRALINÉ",
+                  "price": 1.1
+                },
+                {
+                  "units": 1,
+                  "name": "GALERIE",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "SOMMELIER",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "DIVINE",
+                  "price": 1.2
+                }
+              ],
+              "total": 6.9
             }
           ],
           "status": "confirmed"
