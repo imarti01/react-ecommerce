@@ -17,8 +17,6 @@ export const DashboardDetail = () => {
   const { chocolates, pcs, total } = boxDetail;
 
   const chocolatesData = useFetch("http://localhost:3004/chocolates");
-  console.log(chocolatesData);
-  console.log(purchaseHistory);
 
   useEffect(() => {
     if (purchaseHistory) {
