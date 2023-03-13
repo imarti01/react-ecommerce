@@ -12,9 +12,16 @@ export const HeaderDashboard = () => {
     navigate("/");
   };
 
+  const navigateHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="header-dashboard">
-      <h4 onClick={logout}>LOGOUT</h4>
+      <div>
+        <h4 onClick={navigateHome}>HOME</h4>
+        <h4 onClick={logout}>LOGOUT</h4>
+      </div>
       <h2>PROFILE PAGE</h2>
     </div>
   );

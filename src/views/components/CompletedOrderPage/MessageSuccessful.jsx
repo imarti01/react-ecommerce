@@ -1,12 +1,13 @@
-import React from "react";
 import { useCartContext } from "../../../hooks";
 
 import "./MessageSuccessful.scss";
 
 export const MessageSuccessful = () => {
   const { cartState } = useCartContext();
-  const { cart, address: shippingAddress } = cartState;
-  const { address, city, zip, phone } = shippingAddress;
+  const { lastOrder } = cartState;
+  const { cart, address: deliveryAddress } = lastOrder;
+  const { address, city, zip, phone } = deliveryAddress;
+
   return (
     <div className="message-successful">
       <h2 className="message-successful__title">

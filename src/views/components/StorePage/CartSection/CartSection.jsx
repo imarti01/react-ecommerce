@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useCartContext, useCurrentBoxContext } from "../../../../hooks";
-import { ButtonNextPage } from "../../ButtonNextPage/ButtonNextPage";
 import { SummaryCard } from "../../SummaryCard/SummaryCard";
 import { TotalBoxesNav } from "../../TotalBoxesNav/TotalBoxesNav";
 import { CurrentBoxDetail } from "../index";
@@ -16,6 +15,7 @@ export const CartSection = () => {
   const navigate = useNavigate();
 
   const submitBuyCart = () => {
+    closeCart();
     navigate("/address");
   };
 

@@ -17,4 +17,5 @@ export const types = {
   CLOSE_CART: "[cart] close_cart",
   CHANGE_UNITS: "[cart] change_units",
   CHOOSE_ADDRESS: "[cart] choose_address",
+  SAVE_LAST_ORDER: "[cart] save_last_order",
 };

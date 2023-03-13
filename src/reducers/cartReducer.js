@@ -15,6 +15,8 @@ export const cartReducer = (state, action) => {
       return { ...state, cart: payload };
     case types.CHOOSE_ADDRESS:
       return { ...state, address: payload };
+    case types.SAVE_LAST_ORDER:
+      return { ...state, cart: [], address: {}, lastOrder: payload };
     default:
       return state;
   }

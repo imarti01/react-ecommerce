@@ -95,130 +95,31 @@
   ],
   "users": [
     {
-      "id": "6fa9264b-605a-0439-49a6-9a094ecbea4b",
+      "id": "531dc591-68f7-1339-63fb-957133fc61b4",
       "name": "Isaura",
       "surname": "Martí",
       "email": "isaura@isaura.com",
       "password": "12345",
-      "savedAddress": [
-        {
-          "id": "3e7b8601-48ca-c353-73b6-af295ed4eb91",
-          "address": "Álvaro, 1",
-          "zip": "43000",
-          "city": "Toronto",
-          "phone": "666666666"
-        },
-        {
-          "id": "13318d7e-d6c6-074e-2e41-ffa6b792536f",
-          "address": "Jose, 1",
-          "zip": "22222",
-          "city": "Toronto",
-          "phone": "666666666"
-        }
-      ],
+      "savedAddress": [],
       "purchaseHistory": [
         {
-          "orderDate": "12/3/2023",
+          "orderDate": "13/3/2023",
           "boxes": [
             {
-              "id": "d250c969-18fb-4045-fc90-23442560a84d",
+              "id": "7e45562b-e173-9a22-e1d6-ef4ba4a38cab",
               "units": 1,
               "pcs": 6,
               "counterPcs": 6,
               "chocolates": [
                 {
                   "units": 1,
-                  "name": "BRILLANT",
-                  "price": 1.05
-                },
-                {
-                  "units": 1,
-                  "name": "PRALINÉ",
-                  "price": 1.1
-                },
-                {
-                  "units": 1,
-                  "name": "GALERIE",
-                  "price": 1.15
-                },
-                {
-                  "units": 1,
-                  "name": "SOMMELIER",
-                  "price": 1.2
-                },
-                {
-                  "units": 1,
-                  "name": "COFFEE",
-                  "price": 1.15
-                },
-                {
-                  "units": 1,
-                  "name": "DIVINE",
-                  "price": 1.2
-                }
-              ],
-              "total": 6.8500000000000005
-            },
-            {
-              "id": "af9f0067-1af7-0852-ff33-3c57ec920e13",
-              "units": 3,
-              "pcs": 6,
-              "counterPcs": 6,
-              "chocolates": [
-                {
-                  "units": 1,
-                  "name": "BRILLANT",
-                  "price": 1.05
-                },
-                {
-                  "units": 1,
                   "name": "PISTACHIO",
                   "price": 1.2
                 },
                 {
                   "units": 1,
-                  "name": "PRESTIGE",
-                  "price": 1.05
-                },
-                {
-                  "units": 1,
-                  "name": "DIAMANT",
-                  "price": 1.15
-                },
-                {
-                  "units": 1,
-                  "name": "COFFEE",
-                  "price": 1.15
-                },
-                {
-                  "units": 1,
-                  "name": "DIVINE",
-                  "price": 1.2
-                }
-              ],
-              "total": 6.8
-            }
-          ],
-          "status": "confirmed"
-        },
-        {
-          "orderDate": "12/3/2023",
-          "boxes": [
-            {
-              "id": "700dcf48-4a16-dff1-3726-7675daa472f7",
-              "units": 3,
-              "pcs": 6,
-              "counterPcs": 6,
-              "chocolates": [
-                {
-                  "units": 1,
                   "name": "BRILLANT",
                   "price": 1.05
-                },
-                {
-                  "units": 1,
-                  "name": "PISTACHIO",
-                  "price": 1.2
                 },
                 {
                   "units": 1,
@@ -242,6 +143,51 @@
                 }
               ],
               "total": 6.95
+            }
+          ],
+          "status": "confirmed"
+        },
+        {
+          "orderDate": "13/3/2023",
+          "boxes": [
+            {
+              "id": "f2108eb8-1b68-99a0-dd94-6b982d7115db",
+              "units": 1,
+              "pcs": 6,
+              "counterPcs": 6,
+              "chocolates": [
+                {
+                  "units": 1,
+                  "name": "PISTACHIO",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "DIAMANT",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "BRILLANT",
+                  "price": 1.05
+                },
+                {
+                  "units": 1,
+                  "name": "COFFEE",
+                  "price": 1.15
+                },
+                {
+                  "units": 1,
+                  "name": "DIVINE",
+                  "price": 1.2
+                },
+                {
+                  "units": 1,
+                  "name": "GALERIE",
+                  "price": 1.15
+                }
+              ],
+              "total": 6.899999999999999
             }
           ],
           "status": "confirmed"

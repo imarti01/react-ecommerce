@@ -7,7 +7,7 @@ export const PaymentForm = () => {
   const navigate = useNavigate();
   const { authState, savePurchaseHistory } = useAuthContext();
   const { user } = authState;
-  const { cartState } = useCartContext();
+  const { cartState, saveLastOrder } = useCartContext();
   const { cart } = cartState;
 
   const submitPayment = (e) => {
@@ -28,6 +28,7 @@ export const PaymentForm = () => {
     }).catch((error) => console.error(error));
 
     savePurchaseHistory(purchase);
+    saveLastOrder();
     navigate("/completed");
   };
 

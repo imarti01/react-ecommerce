@@ -9,16 +9,22 @@
     height:23vh;
     width: 100vw;
 
-    h4 {
+    div {
         position: absolute;
+        display: flex;
         top: 1rem;
         right: 1rem;
-        cursor: pointer;
-
-        &:hover {
-            color: $green-color;
+        
+        h4 {
+            cursor: pointer;
+            margin-left: 1.5rem;
+            &:hover {
+                color: $green-color;
+            }
         }
     }
+
+       
 
     h2 {
         font-size: 2.7rem;

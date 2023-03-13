@@ -12,24 +12,31 @@ export const DashboardDetail = () => {
   const { addBoxToCart } = useCartContext();
   const { boxId } = useParams();
   const navigate = useNavigate();
-
   const [boxDetail, setBoxDetail] = useState({});
   const { chocolates, pcs, total } = boxDetail;
 
   const chocolatesData = useFetch("http://localhost:3004/chocolates");
+  console.log(chocolatesData);
+  console.log(purchaseHistory);
 
   useEffect(() => {
     if (purchaseHistory) {
-      const box = purchaseHistory.map(({ boxes }) =>
-        boxes.find(({ id }) => id === boxId)
-      );
-      setBoxDetail({ ...box[0], units: 1, id: uuid() });
+      const box = purchaseHistory
+        .map(({ boxes }) => boxes)
+        .flat()
+        .find(({ id }) => id === boxId);
+
+      setBoxDetail({ ...box, units: 1, id: uuid() });
     }
   }, [boxId, purchaseHistory]);
 
   const addBoxCart = () => {
     addBoxToCart(boxDetail);
     navigate("/store");
+  };
+
+  const backDashboard = () => {
+    navigate("/dashboard");
   };
 
   return (
@@ -54,6 +61,9 @@ export const DashboardDetail = () => {
       </h3>
       <button className="dashboard-detail__button" onClick={addBoxCart}>
         Add to Cart
+      </button>
+      <button className="dashboard-detail__back" onClick={backDashboard}>
+        BACK
       </button>
     </div>
   );

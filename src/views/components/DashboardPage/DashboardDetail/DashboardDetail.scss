@@ -47,4 +47,9 @@
         @include buttonBuy($green-color, $dark-color, $green-color);
         margin: 2rem;
     }
+
+    &__back {
+        @include buttonBuy($light-color, $dark-color, $green-color);
+        font-size: 1.2rem;
+    }
 }

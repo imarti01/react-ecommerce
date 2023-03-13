@@ -7,11 +7,12 @@ const initialState = {
   cart: [],
   isCartOpen: false,
   address: {},
+  lastOrder: {},
 };
 
 export const CartProvider = ({ children }) => {
   const [cartState, dispatch] = useReducer(cartReducer, initialState);
-  const { cart } = cartState;
+  const { cart, address } = cartState;
 
   const openCart = () => {
     dispatch({ type: types.OPEN_CART });
@@ -41,6 +42,10 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: types.CHOOSE_ADDRESS, payload: address });
   };
 
+  const saveLastOrder = () => {
+    dispatch({ type: types.SAVE_LAST_ORDER, payload: { cart, address } });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -51,6 +56,7 @@ export const CartProvider = ({ children }) => {
         changeUnitsBoxOnCart,
         chooseAddress,
         deleteBoxToCart,
+        saveLastOrder,
       }}
     >
       {children}
