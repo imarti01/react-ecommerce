@@ -27,8 +27,11 @@ export const CurrentBoxDetail = () => {
       text: "What do you want do now?",
       icon: "success",
       showCancelButton: "success",
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      iconColor: "#6d7505",
+      color: "#221a14",
+      background: "#DBD5CB",
+      confirmButtonColor: "#6d7505",
+      cancelButtonColor: "#221a14",
       confirmButtonText: "CONTINUE WITH THE PURCHASE",
       cancelButtonText: "KEEP BUYING",
     }).then((result) => {

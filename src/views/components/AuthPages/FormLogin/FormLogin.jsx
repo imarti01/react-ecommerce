@@ -27,6 +27,10 @@ export const FormLogin = () => {
         icon: "error",
         title: "Incorrect email or password",
         text: "Check that they are correct or, in case you are not yet registered, you should do so first",
+        iconColor: "#221a14",
+        color: "#221a14",
+        background: "#DBD5CB",
+        confirmButtonColor: "#6d7505",
       });
     } else {
       login(user[0]);

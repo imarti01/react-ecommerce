@@ -39,6 +39,10 @@ export const FormRegister = () => {
       Swal.fire({
         icon: "error",
         title: "Already exists an account associated with this email!",
+        iconColor: "#221a14",
+        color: "#221a14",
+        background: "#DBD5CB",
+        confirmButtonColor: "#6d7505",
       });
     } else {
       fetch("http://localhost:3004/users", {

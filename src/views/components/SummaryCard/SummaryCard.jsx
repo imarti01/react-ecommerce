@@ -11,14 +11,25 @@ export const SummaryCard = ({ id, units, pcs, total, chocolates }) => {
       title: "Are you sure to delete this box?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      iconColor: "#221a14",
+      color: "#221a14",
+      background: "#DBD5CB",
+      confirmButtonColor: "#6d7505",
+      cancelButtonColor: "#221a14",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
         deleteBoxToCart(id);
         closeCart();
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire({
+          icon: "success",
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          iconColor: "#6d7505",
+          color: "#221a14",
+          background: "#DBD5CB",
+          confirmButtonColor: "#6d7505",
+        });
       }
     });
   };
